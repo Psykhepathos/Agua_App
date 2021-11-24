@@ -52,7 +52,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
       child: Scaffold(
         extendBodyBehindAppBar: false,
         appBar: PreferredSize(
-            preferredSize: Size.fromHeight(35.0), // here the desired height
+            preferredSize: Size.fromHeight(32.0), // here the desired height
             child: AppBar(
               elevation: 0,
               backgroundColor: const Color.fromRGBO(92, 190, 191, 1),
@@ -70,36 +70,6 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                 Container(
                   height: 260,
                   color: const Color.fromRGBO(92, 190, 191, 1),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        width: 25,
-                        height: 200,
-                        decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                                bottomRight: Radius.circular(10),
-                                topRight: Radius.circular(15)),
-                            color: Color.fromRGBO(84, 167, 168, 1)),
-                      ),
-                      Container(
-                        width: 300,
-                        height: 250,
-                        decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(15)),
-                            color: Color.fromRGBO(84, 167, 168, 1)),
-                      ),
-                      Container(
-                        width: 25,
-                        height: 200,
-                        decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(10),
-                                topLeft: Radius.circular(15)),
-                            color: Color.fromRGBO(84, 167, 168, 1)),
-                      ),
-                    ],
-                  ),
                 ),
                 Stack(children: <Widget>[
                   const SizedBox(

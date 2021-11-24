@@ -16,8 +16,9 @@ class RegisterList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance!.addPostFrameCallback((_) => _scrollToBottom());
-    return Container(
-      height: 800,
+    return SizedBox(
+      height: 500,
+      width: 350,
       child: ListView.builder(
         itemCount: registers.length,
         controller: _scrollController,
@@ -66,23 +67,22 @@ class RegisterList extends StatelessWidget {
                             children: [
                               Text('Leitura:'),
                               Container(
-                                  margin: EdgeInsets.only(left: 10),
                                   child: Text.rich(TextSpan(
                                       text: rg.leitura
                                           .toString()
                                           .padLeft(8, '0')
                                           .substring(0, 4),
                                       children: <TextSpan>[
-                                        TextSpan(
-                                            text: rg.leitura
-                                                .toString()
-                                                .padLeft(9, '0')
-                                                .substring(5, 9),
-                                            style: TextStyle(
-                                              color: const Color.fromRGBO(
-                                                  255, 149, 149, 1),
-                                            ))
-                                      ]))),
+                                    TextSpan(
+                                        text: rg.leitura
+                                            .toString()
+                                            .padLeft(9, '0')
+                                            .substring(5, 9),
+                                        style: TextStyle(
+                                          color: const Color.fromRGBO(
+                                              255, 149, 149, 1),
+                                        ))
+                                  ]))),
                             ],
                           ),
                         ],
@@ -90,17 +90,20 @@ class RegisterList extends StatelessWidget {
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 70, bottom: 15),
+                    margin: EdgeInsets.only(left: 45, bottom: 15),
                     child: Column(
                       children: [
                         Container(
-                          margin: EdgeInsets.only(left: 30),
-                          child: IconButton(
-                            alignment: Alignment.bottomRight,
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.delete_forever_rounded,
-                              color: Color.fromRGBO(255, 149, 149, 1),
+                          child: Container(
+                            margin: EdgeInsets.only(
+                              left: 40,
+                            ),
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.delete_forever_rounded,
+                                color: Color.fromRGBO(255, 149, 149, 1),
+                              ),
                             ),
                           ),
                         ),
