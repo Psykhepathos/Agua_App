@@ -16,8 +16,8 @@ class RegisterList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance!.addPostFrameCallback((_) => _scrollToBottom());
-    return SizedBox(
-      height: 200,
+    return Container(
+      height: 800,
       child: ListView.builder(
         itemCount: registers.length,
         controller: _scrollController,

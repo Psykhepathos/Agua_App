@@ -170,7 +170,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                   ),
                 ),
                 Container(
-                    height: 170,
+                    height: 288,
                     alignment: Alignment.topCenter,
                     child: RegisterList(_registers)),
               ],
