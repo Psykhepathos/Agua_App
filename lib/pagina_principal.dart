@@ -118,12 +118,16 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                   height: 10,
                 ),
                 SizedBox(
-                  height: 50,
+                  height: MediaQuery.of(context).size.height * .65,
                   width: 350,
                   child: ElevatedButton(
                     style: ButtonStyle(
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)))),
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(13),
+                        ),
+                      ),
+                    ),
                     // Este é o botão de pular de tela, usei tela nomeavel pois terão varias outras telas.
                     onPressed: () => _openregisterFormModal(context),
                     child: const Text('Novo Registro'),
