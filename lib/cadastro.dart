@@ -124,21 +124,23 @@ class _CadastroState extends State<Cadastro> {
                           child: TextField(
                             onChanged: (text) {},
                             decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15)),
-                                labelText: 'Telefone',
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                      color: Color.fromRGBO(255, 149, 149, 1),
-                                      width: 2.0),
-                                  borderRadius: BorderRadius.circular(15.0),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.grey, width: 0.0),
-                                    borderRadius: BorderRadius.circular(15)),
-                                fillColor: Colors.white,
-                                filled: true),
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15)),
+                              labelText: 'Telefone',
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                    color: Color.fromRGBO(255, 149, 149, 1),
+                                    width: 2.0),
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                    color: Colors.grey, width: 0.0),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              fillColor: Colors.white,
+                              filled: true,
+                            ),
                           ),
                         ),
                       ),
