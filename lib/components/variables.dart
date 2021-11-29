@@ -6,17 +6,19 @@ class Vars {
   static const Color primary = Color.fromARGB(255, 92, 190, 191);
   static const Color primaryDark = Color.fromARGB(255, 84, 167, 168);
   static const Color secondary = Color.fromARGB(255, 255, 149, 149);
+  static const Color secondaryDisabled = Color.fromARGB(84, 255, 149, 149);
   static const Color offWhite = Color.fromARGB(255, 250, 250, 250);
   static const Color disabledText = Color.fromARGB(126, 255, 255, 255);
   static const Color activeText = Color.fromARGB(255, 149, 142, 142);
   static const Color disabledTextAlt = Color.fromARGB(126, 174, 174, 174);
   static const Color redText = Color.fromARGB(255, 231, 77, 77);
   static const Color redTextDisabled = Color.fromARGB(125, 255, 0, 0);
-  static const Color BlackText = Color.fromARGB(255, 39, 39, 39);
-  static const Color LinkBlue = Color.fromARGB(255, 0, 196, 255);
+  static const Color blackText = Color.fromARGB(255, 39, 39, 39);
+  static const Color linkBlue = Color.fromARGB(255, 0, 196, 255);
   static const Color popUpBackground = Color.fromARGB(153, 0, 0, 0);
   static const Color positiveGreen = Color.fromARGB(126, 255, 255, 255);
-  static const Color backGroundGrey = Color.fromARGB(126, 255, 255, 255);
+  static const Color backGroundGrey = Color.fromARGB(255, 234, 234, 234);
+  static const Color copasaBlue = Color.fromARGB(255, 24, 99, 156);
 
   static const List<Color> whatsAppGreen = [
     Color.fromARGB(255, 37, 211, 102),

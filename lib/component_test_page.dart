@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/buttons.dart';
+import 'package:flutter_application_1/components/form_fields.dart';
 import 'package:flutter_application_1/components/variables.dart';
 import 'components/buttons.dart';
+import 'components/form_fields.dart';
 
 main() {
   runApp(const AppWidget());
@@ -613,6 +615,87 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
+            Container(
+              padding: EdgeInsets.only(top: 50, bottom: 50),
+              color: Vars.backGroundGrey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Center(
+                    child: Buttons.largeIconButton(
+                      context,
+                      function: () {},
+                      icon: "Whatsapp",
+                      texto: "Chamar no Whatsapp",
+                      colors: Vars.whatsAppGreen,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Buttons.largeIconButton(
+                      context,
+                      function: () {},
+                      icon: "Phone",
+                      texto: "Chamar no Telefone",
+                      colors: [Vars.primaryDark, Vars.primaryDark],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Buttons.largeIconButton(
+                      context,
+                      function: () {},
+                      icon: "Copasa",
+                      texto: "Agência Online",
+                      colors: [Vars.copasaBlue, Vars.copasaBlue],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Buttons.largeButton(
+                      context,
+                      function: () {},
+                      texto: "Texto Desabilitado",
+                      textColor: Vars.disabledText,
+                      colors: [Vars.secondaryDisabled, Vars.secondaryDisabled],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              color: Vars.primary,
+              width: MediaQuery.of(context).size.width,
+              padding: EdgeInsets.only(top: 50, bottom: 50),
+              child: Form(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FormFields.textFormField(
+                      context,
+                      TextEditingController(),
+                      (p0) => null,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    FormFields.textFormField(
+                      context,
+                      TextEditingController(),
+                      (p0) => null,
+                      textColor: Vars.offWhite,
+                      backgroundColor: Vars.disabledText,
+                    )
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
