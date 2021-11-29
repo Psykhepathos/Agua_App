@@ -22,8 +22,9 @@ class AppWidget extends StatelessWidget {
           // change the focus border color when the errorText is set
           errorColor: Colors.purple,
         ),
-        initialRoute: '/pagina_principal',
+        initialRoute: '/login_page',
         routes: {
+          '/login_page': (context) => const LoginPage(),
           '/pagina_principal': (context) => const PaginaPrincipal(),
           '/esqueci_senha': (context) => const EsqueciSenha(),
           '/cadastro': (context) => const Cadastro(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/components/chart.dart';
 import 'package:flutter_application_1/components/register_form.dart';
 import 'package:flutter_application_1/components/register_list.dart';
 
@@ -7,6 +8,7 @@ import 'dart:math';
 import '/models/registers.dart';
 import '/components/register_form.dart';
 import '/components/register_list.dart';
+import '/components/chart.dart';
 
 class PaginaPrincipal extends StatefulWidget {
   const PaginaPrincipal({Key? key}) : super(key: key);
@@ -17,8 +19,16 @@ class PaginaPrincipal extends StatefulWidget {
 
 class _PaginaPrincipalState extends State<PaginaPrincipal> {
   final _registers = [
-    Register(id: 'r1', leitura: 00000010, litros: 10, date: DateTime.now()),
-    Register(id: 'r2', leitura: 00000100, litros: 100, date: DateTime.now()),
+    Register(
+        id: 'r1',
+        leitura: 00000010,
+        litros: 10,
+        date: DateTime.now().subtract(Duration(days: 3))),
+    Register(
+        id: 'r2',
+        leitura: 00000100,
+        litros: 100,
+        date: DateTime.now().subtract(Duration(days: 4))),
   ];
 
   _openregisterFormModal(BuildContext context) {
@@ -67,9 +77,8 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
             ),
             Column(
               children: [
-                Container(
-                  height: 260,
-                  color: const Color.fromRGBO(92, 190, 191, 1),
+                Center(
+                  child: SizedBox(height: 260, child: Chart(_registers)),
                 ),
                 Stack(children: <Widget>[
                   const SizedBox(
