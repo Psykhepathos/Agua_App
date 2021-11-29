@@ -26,12 +26,13 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Teste de Componentes'),
-          centerTitle: true,
-        ),
-        body: SingleChildScrollView(
-          child: Column(children: [
+      appBar: AppBar(
+        title: const Text('Teste de Componentes'),
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
             Container(
               child: Column(
                 children: [
@@ -113,7 +114,7 @@ class Home extends StatelessWidget {
                       ),
                     ],
                   ),
-                  /*SizedBox(
+                  SizedBox(
                     width: 20,
                     height: 20,
                   ),
@@ -291,7 +292,7 @@ class Home extends StatelessWidget {
                           print("Voce clicou no botão");
                         },
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 20,
                         height: 20,
                       ),
@@ -307,12 +308,12 @@ class Home extends StatelessWidget {
                   ),
                 ],
               ),
-            ),*/
-                  const SizedBox(
-                    width: 20,
-                    height: 20,
-                  ),
-                  /*Container(
+            ),
+            const SizedBox(
+              width: 20,
+              height: 20,
+            ),
+            Container(
               color: Color.fromARGB(255, 92, 190, 191),
               child: Column(
                 children: [
@@ -611,11 +612,10 @@ class Home extends StatelessWidget {
                   ),
                 ],
               ),
-            ),*/
-                ],
-              ),
             ),
-          ]),
-        ));
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -80,7 +80,7 @@ class Vars {
     Map<String, String> names = {
       "search": "magnify",
       "Settings": "cog-outline",
-      "RightArrow": "arrow-right-thin",
+      "RightArrow": "arrow-right",
       "Reload": "autorenew",
       "Notifications": "bell-outline",
       "History": "History",
@@ -90,7 +90,7 @@ class Vars {
       "Money": "currency-usd",
       "Home": "home-outline",
       "Contact": "message-outline",
-      "Trash": "Trash-can-outtline",
+      "Trash": "Trash-can-outline",
       "Whatsapp": "whatsapp",
       "Phone": "phone",
       "Copasa": "",
@@ -99,10 +99,25 @@ class Vars {
       "User": "account-outline",
       "CheckMark": "check",
     };
-    return Icon(
-      MdiIcons.fromString(names[icon]!),
-      size: (size == 0) ? 24 : size,
-      color: color,
-    );
+    if (names.containsKey(icon)) {
+      if (icon == "RightArrow") {
+        return Icon(
+          Icons.arrow_right_alt,
+          size: (size == 0) ? 24 : size,
+          color: color,
+        );
+      }
+      return Icon(
+        MdiIcons.fromString(names[icon]!),
+        size: (size == 0) ? 24 : size,
+        color: color,
+      );
+    } else {
+      return Icon(
+        Icons.help_outline,
+        size: (size == 0) ? 24 : size,
+        color: color,
+      );
+    }
   }
 }
