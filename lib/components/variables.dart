@@ -3,6 +3,29 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 
 class Vars {
   static final BorderRadius borderRadius = BorderRadius.circular(13.0);
+  static const Color primary = Color.fromARGB(255, 92, 190, 191);
+  static const Color primaryDark = Color.fromARGB(255, 84, 167, 168);
+  static const Color secondary = Color.fromARGB(255, 255, 149, 149);
+  static const Color offWhite = Color.fromARGB(255, 250, 250, 250);
+  static const Color disabledText = Color.fromARGB(126, 255, 255, 255);
+  static const Color activeText = Color.fromARGB(255, 149, 142, 142);
+  static const Color disabledTextAlt = Color.fromARGB(126, 174, 174, 174);
+  static const Color redText = Color.fromARGB(255, 231, 77, 77);
+  static const Color redTextDisabled = Color.fromARGB(125, 255, 0, 0);
+  static const Color BlackText = Color.fromARGB(255, 39, 39, 39);
+  static const Color LinkBlue = Color.fromARGB(255, 0, 196, 255);
+  static const Color popUpBackground = Color.fromARGB(153, 0, 0, 0);
+  static const Color positiveGreen = Color.fromARGB(126, 255, 255, 255);
+  static const Color backGroundGrey = Color.fromARGB(126, 255, 255, 255);
+
+  static const List<Color> whatsAppGreen = [
+    Color.fromARGB(255, 37, 211, 102),
+    Color.fromARGB(255, 0, 214, 80)
+  ];
+  static const List<Color> secondaryGradient = [
+    Color.fromARGB(255, 255, 149, 149),
+    Color.fromARGB(255, 255, 113, 113)
+  ];
 
   static Text textSmall({
     required String text,
@@ -53,69 +76,33 @@ class Vars {
     );
   }
 
-  static Icon icon(String icon) {
-    switch (icon) {
-      case ("Search"):
-        return Icon(Icons.search);
-      case ("Settings"):
-        return Icon(Icons.settings_outlined);
-
-      case ("RightArrow"):
-        return Icon(Icons.arrow_right_alt);
-
-      case ("Reload"):
-        return Icon(Icons.autorenew_outlined);
-
-      case ("Notifications"):
-        return Icon(Icons.notifications_outlined);
-
-      case ("History"):
-        return Icon(Icons.history_outlined);
-
-      case ("QuestionMark"):
-        return Icon(Icons.help_outline_outlined);
-
-      case ("Right"):
-        return Icon(Icons.navigate_next_outlined);
-
-      case ("Left"):
-        return Icon(Icons.navigate_before_outlined);
-
-      case ("Money"):
-        return Icon(Icons.attach_money_outlined);
-
-      case ("Home"):
-        return Icon(Icons.home_outlined);
-
-      case ("Contact"):
-        return Icon(Icons.chat_bubble_outline_outlined);
-
-      case ("Trash"):
-        return Icon(Icons.delete_outlined);
-
-      case ("Whatsapp"):
-        return Icon(MdiIcons.whatsapp);
-
-      case ("Phone"):
-        return Icon(Icons.phone_outlined);
-
-      case ("Copasa"):
-        return Icon(Icons.search);
-
-      case ("Exit"):
-        return Icon(Icons.logout_outlined);
-
-      case ("Edit"):
-        return Icon(Icons.edit_outlined);
-
-      case ("User"):
-        return Icon(Icons.account_circle_outlined);
-
-      case ("CheckMark"):
-        return Icon(Icons.check_outlined);
-
-      default:
-        return Icon(Icons.help_outlined);
-    }
+  static Icon icon(String icon, {color = Colors.white, double size = 0}) {
+    Map<String, String> names = {
+      "search": "magnify",
+      "Settings": "cog-outline",
+      "RightArrow": "arrow-right-thin",
+      "Reload": "autorenew",
+      "Notifications": "bell-outline",
+      "History": "History",
+      "QuestionMark": "help-circle-outline",
+      "Right": "chevron-right",
+      "Left": "chevron-left",
+      "Money": "currency-usd",
+      "Home": "home-outline",
+      "Contact": "message-outline",
+      "Trash": "Trash-can-outtline",
+      "Whatsapp": "whatsapp",
+      "Phone": "phone",
+      "Copasa": "",
+      "Exit": "logout-variant",
+      "Edit": "pencil-outline",
+      "User": "account-outline",
+      "CheckMark": "check",
+    };
+    return Icon(
+      MdiIcons.fromString(names[icon]!),
+      size: (size == 0) ? 24 : size,
+      color: color,
+    );
   }
 }

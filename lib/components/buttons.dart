@@ -41,10 +41,11 @@ class Buttons {
     );
   }
 
-  static Widget SquareButton(
+  static Widget squareButton(
     context, {
     required String icon,
-    required List<Color> colors,
+    List<Color> backgroundColors = const [Color.fromARGB(255, 255, 149, 149)],
+    iconColor = Colors.white,
     Function()? function,
   }) {
     return Container(
@@ -52,20 +53,24 @@ class Buttons {
       width: MediaQuery.of(context).size.height / 16.83636,
       decoration: BoxDecoration(
         borderRadius: Vars.borderRadius,
-        gradient: const LinearGradient(
+        gradient: LinearGradient(
           begin: Alignment(0.0, -1.0),
           end: Alignment(0.0, 1.0),
-          colors: [
-            Color.fromARGB(255, 255, 149, 149),
-            Color.fromARGB(255, 255, 113, 113)
-          ],
+          colors: backgroundColors,
           stops: [0.0, 1.0],
         ),
       ),
       child: ElevatedButton(
         onPressed: function,
-        child: Vars.icon(icon),
+        child: Vars.icon(icon, color: iconColor),
         style: ButtonStyle(
+          padding:
+              MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.zero),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: Vars.borderRadius,
+            ),
+          ),
           backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
           shadowColor: MaterialStateProperty.all<Color>(Colors.transparent),
         ),

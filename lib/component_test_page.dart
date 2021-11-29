@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/buttons.dart';
+import 'package:flutter_application_1/components/variables.dart';
 import 'components/buttons.dart';
 
 main() {
@@ -25,22 +26,26 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Teste de Componentes'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Row(
-          children: [
+        appBar: AppBar(
+          title: const Text('Teste de Componentes'),
+          centerTitle: true,
+        ),
+        body: SingleChildScrollView(
+          child: Column(children: [
             Container(
               child: Column(
                 children: [
+                  SizedBox(
+                    width: 20,
+                    height: 20,
+                  ),
                   Row(
                     children: <Widget>[
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
-                        icon: "Search",
-                        colors: [Color(0x1348569)],
+                        icon: "search",
+                        backgroundColors: Vars.secondaryGradient,
+                        iconColor: Vars.offWhite,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -49,10 +54,10 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Settings",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -61,26 +66,23 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "RightArrow",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
+                        iconColor: Colors.white,
                         function: () {
                           print("Voce clicou no botão");
                         },
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: 20,
-                    height: 20,
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Buttons.SquareButton(
+                      SizedBox(
+                        width: 20,
+                        height: 20,
+                      ),
+                      Buttons.squareButton(
                         context,
                         icon: "Reload",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -89,10 +91,10 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Notifications",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -101,26 +103,26 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "History",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
                       ),
                     ],
                   ),
-                  SizedBox(
+                  /*SizedBox(
                     width: 20,
                     height: 20,
                   ),
                   Row(
                     children: <Widget>[
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "QuestionMark",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -129,10 +131,10 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Right",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -141,26 +143,22 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Left",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: 20,
-                    height: 20,
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Buttons.SquareButton(
+                      SizedBox(
+                        width: 20,
+                        height: 20,
+                      ),
+                      Buttons.squareButton(
                         context,
                         icon: "Money",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -169,10 +167,10 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Home",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -181,10 +179,10 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Contact",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -197,10 +195,10 @@ class Home extends StatelessWidget {
                   ),
                   Row(
                     children: <Widget>[
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Trash",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -209,10 +207,10 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Whatsapp",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -221,26 +219,22 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Phone",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: 20,
-                    height: 20,
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Buttons.SquareButton(
+                      SizedBox(
+                        width: 20,
+                        height: 20,
+                      ),
+                      Buttons.squareButton(
                         context,
                         icon: "Copasa",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -249,10 +243,10 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Exit",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -261,10 +255,10 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Edit",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -277,10 +271,10 @@ class Home extends StatelessWidget {
                   ),
                   Row(
                     children: <Widget>[
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "User",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -289,22 +283,22 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "CheckMark",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "aaaa",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: Vars.secondaryGradient,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -313,21 +307,26 @@ class Home extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-            SizedBox(
-              width: 20,
-              height: 20,
-            ),
-            Container(
+            ),*/
+                  const SizedBox(
+                    width: 20,
+                    height: 20,
+                  ),
+                  /*Container(
               color: Color.fromARGB(255, 92, 190, 191),
               child: Column(
                 children: [
+                  SizedBox(
+                    width: 20,
+                    height: 20,
+                  ),
                   Row(
                     children: <Widget>[
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Search",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -336,10 +335,11 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Settings",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -348,26 +348,24 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "RightArrow",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: 20,
-                    height: 20,
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Buttons.SquareButton(
+                      SizedBox(
+                        width: 20,
+                        height: 20,
+                      ),
+                      Buttons.squareButton(
                         context,
                         icon: "Reload",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -376,10 +374,11 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Notifications",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -388,10 +387,11 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "History",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -404,10 +404,11 @@ class Home extends StatelessWidget {
                   ),
                   Row(
                     children: <Widget>[
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "QuestionMark",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -416,10 +417,11 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Right",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -428,26 +430,24 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Left",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: 20,
-                    height: 20,
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Buttons.SquareButton(
+                      SizedBox(
+                        width: 20,
+                        height: 20,
+                      ),
+                      Buttons.squareButton(
                         context,
                         icon: "Money",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -456,10 +456,11 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Home",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -468,10 +469,11 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Contact",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -484,10 +486,11 @@ class Home extends StatelessWidget {
                   ),
                   Row(
                     children: <Widget>[
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Trash",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -496,10 +499,11 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Whatsapp",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -508,26 +512,24 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Phone",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: 20,
-                    height: 20,
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Buttons.SquareButton(
+                      SizedBox(
+                        width: 20,
+                        height: 20,
+                      ),
+                      Buttons.squareButton(
                         context,
                         icon: "Copasa",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -536,10 +538,11 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Exit",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -548,10 +551,11 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "Edit",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -564,10 +568,11 @@ class Home extends StatelessWidget {
                   ),
                   Row(
                     children: <Widget>[
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "User",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -576,10 +581,11 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "CheckMark",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
@@ -588,22 +594,28 @@ class Home extends StatelessWidget {
                         width: 20,
                         height: 20,
                       ),
-                      Buttons.SquareButton(
+                      Buttons.squareButton(
                         context,
                         icon: "aaaa",
-                        colors: [Color(0x1348569)],
+                        backgroundColors: [Vars.offWhite, Vars.offWhite],
+                        iconColor: Vars.secondary,
                         function: () {
                           print("Voce clicou no botão");
                         },
+                      ),
+                      SizedBox(
+                        width: 20,
+                        height: 20,
                       ),
                     ],
                   ),
                 ],
               ),
+            ),*/
+                ],
+              ),
             ),
-          ],
-        ),
-      ),
-    );
+          ]),
+        ));
   }
 }
