@@ -9,7 +9,7 @@ class Buttons {
     String texto = "Button",
     double width = 0,
     Color textColor = Colors.white,
-    required List<Color> colors,
+    List<Color> colors = Vars.secondaryGradient,
   }) {
     return Container(
       height: MediaQuery.of(context).size.height / 16.83636,
@@ -42,7 +42,7 @@ class Buttons {
   static Widget squareButton(
     context, {
     required String icon,
-    List<Color> backgroundColors = const [Color.fromARGB(255, 255, 149, 149)],
+    List<Color> backgroundColors = Vars.secondaryGradient,
     iconColor = Colors.white,
     Function()? function,
   }) {
@@ -84,7 +84,7 @@ class Buttons {
     Color iconColor = Colors.white,
     double width = 0,
     Color textColor = Colors.white,
-    required List<Color> colors,
+    List<Color> colors = Vars.secondaryGradient,
   }) {
     return Container(
       height: MediaQuery.of(context).size.height / 16.83636,
