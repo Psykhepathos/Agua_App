@@ -13,6 +13,7 @@ class RegisterList extends StatelessWidget {
     _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
   }
 
+  String capitalize(String s) => s[0].toUpperCase() + s.substring(1);
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance!.addPostFrameCallback((_) => _scrollToBottom());
@@ -43,7 +44,7 @@ class RegisterList extends StatelessWidget {
                       child: Container(
                         alignment: Alignment.center,
                         child: Text(
-                          DateFormat('EEE').format(rg.date),
+                          capitalize(DateFormat('EEE', 'pt_BR').format(rg.date)),
                           style: TextStyle(
                             color: Colors.white,
                           ),

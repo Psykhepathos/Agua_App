@@ -4,6 +4,7 @@ import 'package:flutter_application_1/cadastro.dart';
 import 'package:flutter_application_1/esqueci_senha.dart';
 import 'package:flutter_application_1/login_page.dart';
 import 'package:flutter_application_1/pagina_principal.dart';
+import 'package:intl/date_symbol_data_local.dart';
 //
 
 class AppWidget extends StatelessWidget {
@@ -11,6 +12,7 @@ class AppWidget extends StatelessWidget {
   // ignore: override_on_non_overriding_member
   // ignore: annotate_overrides
   Widget build(BuildContext context) {
+    initializeDateFormatting('pt_BR', null);
     // ignore: avoid_unnecessary_containers
     return MaterialApp(
         theme: ThemeData().copyWith(

@@ -63,39 +63,16 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
 
   final _registers = [
     Register(
-        id: 'r1',
-        leitura: 00000000,
-        litros: 00,
-        date: DateTime.now().subtract(Duration(days: 7))),
+      id: 'r1',
+      leitura: 00000000,
+      litros: 00,
+      date: DateTime.now().subtract(Duration(days: 2)),
+    ),
     Register(
       id: 'r2',
-      leitura: 00000100,
-      litros: 100,
-      date: DateTime.now().subtract(Duration(days: 6)),
-    ),
-    Register(
-      id: 'r3',
-      leitura: 00000200,
-      litros: 100,
-      date: DateTime.now().subtract(Duration(days: 5)),
-    ),
-    Register(
-      id: 'r3',
-      leitura: 00000300,
-      litros: 100,
-      date: DateTime.now().subtract(Duration(days: 4)),
-    ),
-    Register(
-      id: 'r3',
-      leitura: 00000400,
-      litros: 100,
-      date: DateTime.now().subtract(Duration(days: 3)),
-    ),
-    Register(
-      id: 'r3',
-      leitura: 00000500,
-      litros: 100,
-      date: DateTime.now().subtract(Duration(days: 2)),
+      leitura: 00000010,
+      litros: 10,
+      date: DateTime.now().subtract(Duration(days: 1)),
     ),
   ];
   _openregisterFormModal(BuildContext context) {
@@ -149,7 +126,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                 Center(
                   child: SizedBox(
                     height: 260,
-                    child: Teste(recentRegister: _sevenRegisters),
+                    child: Chart(recentRegister: _sevenRegisters),
                   ),
                 ),
                 Stack(children: <Widget>[
