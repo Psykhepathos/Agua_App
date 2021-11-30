@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/cadastro.dart';
-import 'package:flutter_application_1/chart/subscriber_chart.dart';
 import 'package:flutter_application_1/esqueci_senha.dart';
-import 'package:flutter_application_1/chart/home_page.dart';
 import 'package:flutter_application_1/login_page.dart';
 import 'package:flutter_application_1/pagina_principal.dart';
 //
@@ -23,13 +21,12 @@ class AppWidget extends StatelessWidget {
           // change the focus border color when the errorText is set
           errorColor: Colors.purple,
         ),
-        initialRoute: '/home_page',
+        initialRoute: '/pagina_principal',
         routes: {
           '/login_page': (context) => const LoginPage(),
           '/pagina_principal': (context) => const PaginaPrincipal(),
           '/esqueci_senha': (context) => const EsqueciSenha(),
           '/cadastro': (context) => const Cadastro(),
-          '/home_page': (context) => const HomePage(),
         });
   }
 }

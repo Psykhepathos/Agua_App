@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/chart/chart.dart';
 import 'package:flutter_application_1/components/buttons.dart';
-import 'package:flutter_application_1/components/chart.dart';
 import 'package:flutter_application_1/components/register_form.dart';
 import 'package:flutter_application_1/components/register_list.dart';
 import 'package:flutter_application_1/components/variables.dart';
@@ -10,7 +10,6 @@ import 'dart:math';
 import '/models/registers.dart';
 import '/components/register_form.dart';
 import '/components/register_list.dart';
-import '/components/chart.dart';
 
 class PaginaPrincipal extends StatefulWidget {
   const PaginaPrincipal({Key? key}) : super(key: key);
@@ -19,20 +18,86 @@ class PaginaPrincipal extends StatefulWidget {
   State<PaginaPrincipal> createState() => _PaginaPrincipalState();
 }
 
+class Movie {
+  Movie(
+      {required this.movieName,
+      required this.isAnimated,
+      required this.rating});
+  final String movieName;
+  final bool isAnimated;
+  final double rating;
+}
+
 class _PaginaPrincipalState extends State<PaginaPrincipal> {
+  List<Register> _sevenRegisters = [];
+  @override
+  void initState() {
+    super.initState;
+    _sevenRegisters = _registers
+        .where((i) =>
+            i.date.day == DateTime.now().day ||
+            i.date.day == DateTime.now().subtract(Duration(days: 1)).day ||
+            i.date.day == DateTime.now().subtract(Duration(days: 2)).day ||
+            i.date.day == DateTime.now().subtract(Duration(days: 3)).day ||
+            i.date.day == DateTime.now().subtract(Duration(days: 4)).day ||
+            i.date.day == DateTime.now().subtract(Duration(days: 5)).day ||
+            i.date.day == DateTime.now().subtract(Duration(days: 6)).day ||
+            i.date.day == DateTime.now().subtract(Duration(days: 7)).day)
+        .toList();
+  }
+
+  void _setarRecenteRegistro() {
+    setState(() {
+      _sevenRegisters = _registers
+          .where((i) =>
+              i.date.day == DateTime.now().day ||
+              i.date.day == DateTime.now().subtract(Duration(days: 1)).day ||
+              i.date.day == DateTime.now().subtract(Duration(days: 2)).day ||
+              i.date.day == DateTime.now().subtract(Duration(days: 3)).day ||
+              i.date.day == DateTime.now().subtract(Duration(days: 4)).day ||
+              i.date.day == DateTime.now().subtract(Duration(days: 5)).day ||
+              i.date.day == DateTime.now().subtract(Duration(days: 6)).day)
+          .toList();
+    });
+  }
+
   final _registers = [
     Register(
         id: 'r1',
-        leitura: 00000010,
-        litros: 10,
-        date: DateTime.now().subtract(Duration(days: 3))),
+        leitura: 00000000,
+        litros: 00,
+        date: DateTime.now().subtract(Duration(days: 7))),
     Register(
-        id: 'r2',
-        leitura: 00000100,
-        litros: 100,
-        date: DateTime.now().subtract(Duration(days: 4))),
+      id: 'r2',
+      leitura: 00000100,
+      litros: 100,
+      date: DateTime.now().subtract(Duration(days: 6)),
+    ),
+    Register(
+      id: 'r3',
+      leitura: 00000200,
+      litros: 100,
+      date: DateTime.now().subtract(Duration(days: 5)),
+    ),
+    Register(
+      id: 'r3',
+      leitura: 00000300,
+      litros: 100,
+      date: DateTime.now().subtract(Duration(days: 4)),
+    ),
+    Register(
+      id: 'r3',
+      leitura: 00000400,
+      litros: 100,
+      date: DateTime.now().subtract(Duration(days: 3)),
+    ),
+    Register(
+      id: 'r3',
+      leitura: 00000500,
+      litros: 100,
+      date: DateTime.now().subtract(Duration(days: 2)),
+    ),
   ];
-
   _openregisterFormModal(BuildContext context) {
     showModalBottomSheet(
         context: context,
@@ -54,12 +119,14 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
         _registers.add(newRegister);
       },
     );
-
+    _setarRecenteRegistro();
     Navigator.of(context).pop();
   }
 
   @override
   Widget build(BuildContext context) {
+    _setarRecenteRegistro;
+    _sevenRegisters;
     return SafeArea(
       child: Scaffold(
         extendBodyBehindAppBar: false,
@@ -80,7 +147,10 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
             Column(
               children: [
                 Center(
-                  child: SizedBox(height: 260, child: Chart(_registers)),
+                  child: SizedBox(
+                    height: 260,
+                    child: Teste(recentRegister: _sevenRegisters),
+                  ),
                 ),
                 Stack(children: <Widget>[
                   const SizedBox(
