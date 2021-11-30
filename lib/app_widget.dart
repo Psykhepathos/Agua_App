@@ -9,7 +9,6 @@ import 'package:flutter_application_1/pagina_principal.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
-
   // ignore: override_on_non_overriding_member
   // ignore: annotate_overrides
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class AppWidget extends StatelessWidget {
           // change the focus border color when the errorText is set
           errorColor: Colors.purple,
         ),
-        initialRoute: '/teste',
+        initialRoute: '/pagina_principal',
         routes: {
           '/login_page': (context) => const LoginPage(),
           '/pagina_principal': (context) => const PaginaPrincipal(),

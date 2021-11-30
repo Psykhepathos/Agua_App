@@ -127,7 +127,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                   height: 10,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * .65,
+                  height: 50,
                   width: 350,
                   child: ElevatedButton(
                     style: ButtonStyle(
@@ -153,7 +153,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                   ),
                 ),
                 Container(
-                    height: 288,
+                    height: 289,
                     alignment: Alignment.topCenter,
                     child: RegisterList(_registers)),
               ],
