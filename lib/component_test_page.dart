@@ -708,7 +708,13 @@ class Home extends StatelessWidget {
               color: Vars.backGroundGrey,
               width: MediaQuery.of(context).size.width,
               child: RegisterEntry.BillEntry(context, function: () {}),
-            )
+            ),
+            Container(
+                padding: EdgeInsets.only(top: 50, bottom: 50),
+                color: Vars.primary,
+                width: MediaQuery.of(context).size.width,
+                child: Buttons.doubleButton(context,
+                    button1: () {}, button2: () {}))
           ],
         ),
       ),
