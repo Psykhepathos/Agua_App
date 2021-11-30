@@ -7,7 +7,6 @@ class Chart extends StatelessWidget {
   final List<Register> recentRegister;
 
   Chart(this.recentRegister);
-
   List<Map<String, Object>> get groupedRegisters {
     return List.generate(7, (index) {
       final weekDay = DateTime.now().subtract(
