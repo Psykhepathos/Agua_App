@@ -11,7 +11,7 @@ class Chart extends StatelessWidget {
   List<Map<String, Object>> get groupedRegisters {
     return List.generate(7, (index) {
       final weekDay = DateTime.now().subtract(
-        Duration(days: index + 2),
+        Duration(days: index),
       );
 
       double totalSum = 0.0;
@@ -27,15 +27,15 @@ class Chart extends StatelessWidget {
       }
 
       return {
-        'day': DateFormat.E().format(weekDay)[0],
+        'day': DateFormat('EEE').format(weekDay),
         'litros': totalSum,
       };
     }).reversed.toList();
   }
 
   double get _weekTotalValue {
-    return groupedRegisters.fold(0.0, (sum, tr) {
-      return sum + (tr['litros'] as double);
+    return groupedRegisters.fold(0.0, (sum, rg) {
+      return sum + (rg['litros'] as double);
     });
   }
 
@@ -43,17 +43,20 @@ class Chart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10),
-      child: Row(
-        children: groupedRegisters.map((tr) {
-          return Flexible(
-            fit: FlexFit.tight,
-            child: ChartBar(
-              label: tr['day'].toString(),
-              litros: tr['litros'] as double,
-              percentage: (tr['litros'] as double) / _weekTotalValue,
-            ),
-          );
-        }).toList(),
+      child: Container(
+        margin: EdgeInsets.only(left: 60),
+        child: Row(
+          children: groupedRegisters.map((rg) {
+            return Container(
+              margin: EdgeInsets.only(right: 5),
+              child: ChartBar(
+                label: rg['day'].toString(),
+                litros: rg['litros'] as double,
+                percentage: (rg['litros'] as double) / _weekTotalValue,
+              ),
+            );
+          }).toList(),
+        ),
       ),
     );
   }

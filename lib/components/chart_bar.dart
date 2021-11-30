@@ -26,7 +26,7 @@ class ChartBar extends StatelessWidget {
         SizedBox(height: 20),
         Container(
           height: 150,
-          width: 40,
+          width: 25,
           child: Stack(
             alignment: Alignment.bottomCenter,
             children: <Widget>[
