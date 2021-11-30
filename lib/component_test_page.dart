@@ -701,7 +701,7 @@ class Home extends StatelessWidget {
               padding: EdgeInsets.only(top: 50, bottom: 50),
               color: Vars.backGroundGrey,
               width: MediaQuery.of(context).size.width,
-              child: RegisterEntry.ReadingEntry(context),
+              child: RegisterEntry.ReadingEntry(context, function: () {}),
             )
           ],
         ),

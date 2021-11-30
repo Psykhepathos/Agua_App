@@ -3,11 +3,14 @@ import 'package:flutter_application_1/components/variables.dart';
 
 class RegisterEntry {
   static Widget ReadingEntry(
-    context, [
+    context, {
     String day = "Dom",
-    String part1 = "0000",
-    String part2 = "0000",
-  ]) {
+    String reading1 = "0000",
+    String reading2 = "0000",
+    String date = "08/11/2021",
+    int liters = 130,
+    Function()? function,
+  }) {
     return Center(
       child: Container(
         height: MediaQuery.of(context).size.height / 13.8209,
@@ -35,19 +38,19 @@ class RegisterEntry {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Vars.textSmall(text: "08/11/2021", color: Vars.blackText),
+                    Vars.textSmall(text: date, color: Vars.blackText),
                     Row(
                       children: [
                         Vars.textSmaller(
-                            text: "Leitura", color: Vars.blackText),
+                            text: "Leitura:", color: Vars.blackText),
                         SizedBox(
                           width: 10,
                         ),
-                        Vars.textSmaller(text: "0029", color: Vars.blackText),
+                        Vars.textSmaller(text: reading1, color: Vars.blackText),
                         SizedBox(
                           width: 3,
                         ),
-                        Vars.textSmaller(text: "0899", color: Vars.redText)
+                        Vars.textSmaller(text: reading2, color: Vars.redText)
                       ],
                     )
                   ],
@@ -58,8 +61,20 @@ class RegisterEntry {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Vars.icon("Trash", color: Vars.redText, size: 22),
-                Vars.textSmaller(text: "130 Litros", color: Vars.activeText)
+                Container(
+                  width: 30,
+                  height: 22,
+                  child: ElevatedButton(
+                    onPressed: function,
+                    child: Vars.icon("Trash", color: Vars.redText, size: 22),
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      shadowColor: Colors.transparent,
+                      primary: Vars.offWhite,
+                    ),
+                  ),
+                ),
+                Vars.textSmaller(text: "$liters Litros", color: Vars.activeText)
               ],
             )
           ],
