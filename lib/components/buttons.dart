@@ -123,4 +123,97 @@ class Buttons {
       ),
     );
   }
+
+  static Widget doubleButton(
+    context, {
+    int selected = 1,
+    Function()? button1,
+    Function()? button2,
+  }) {
+    return Center(
+      child: Container(
+        height: MediaQuery.of(context).size.height / 21.53488,
+        width: MediaQuery.of(context).size.width / 1.17582,
+        child: Row(
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height / 21.53488,
+              width: (MediaQuery.of(context).size.width / 1.17582) / 2,
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(13),
+                  bottomLeft: Radius.circular(13),
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment(0.0, -1.0),
+                  end: Alignment(0.0, 1.0),
+                  colors: (selected == 1)
+                      ? Vars.secondaryGradient
+                      : [Vars.offWhite, Vars.offWhite],
+                  stops: const [0.0, 1.0],
+                ),
+              ),
+              child: ElevatedButton(
+                onPressed: button1,
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.transparent,
+                  padding: EdgeInsets.zero,
+                  shadowColor: Colors.transparent,
+                ),
+                child: Container(
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height / 21.53488,
+                    width: (MediaQuery.of(context).size.width / 1.17582) / 2,
+                    child: Center(
+                      child: Vars.textSmall(
+                        text: "Mensal",
+                        color:
+                            (selected == 1 ? Vars.offWhite : Vars.activeText),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height / 21.53488,
+              width: (MediaQuery.of(context).size.width / 1.17582) / 2,
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
+                  topRight: Radius.circular(13),
+                  bottomRight: Radius.circular(13),
+                ),
+                gradient: LinearGradient(
+                  begin: const Alignment(0.0, -1.0),
+                  end: const Alignment(0.0, 1.0),
+                  colors: (selected == 2)
+                      ? Vars.secondaryGradient
+                      : [Vars.offWhite, Vars.offWhite],
+                  stops: const [0.0, 1.0],
+                ),
+              ),
+              child: ElevatedButton(
+                onPressed: button2,
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.transparent,
+                  padding: EdgeInsets.zero,
+                  shadowColor: Colors.transparent,
+                ),
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height / 21.53488,
+                  width: (MediaQuery.of(context).size.width / 1.17582) / 2,
+                  child: Center(
+                    child: Vars.textSmall(
+                      text: "Diário",
+                      color: (selected == 2 ? Vars.offWhite : Vars.activeText),
+                    ),
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
 }
