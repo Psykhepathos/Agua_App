@@ -127,8 +127,8 @@ class Buttons {
   static Widget doubleButton(
     context, {
     int selected = 1,
-    Function()? button1,
-    Function()? button2,
+    required Function()? button1,
+    required Function()? button2,
   }) {
     return Center(
       child: Container(
