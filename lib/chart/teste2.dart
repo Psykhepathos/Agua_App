@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/chart/subscriber_series.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:flutter_application_1/models/registers.dart';
 import '/chart/subscriber_series.dart';
 
-class SubscriberChart extends StatelessWidget {
-  final List<SubscriberSeries> data;
-
-  SubscriberChart({required this.data});
+class Teste extends StatelessWidget {
+  final List<Register> recentRegister;
+  Teste({required this.recentRegister});
 
   @override
   Widget build(BuildContext context) {
-    List<charts.Series<SubscriberSeries, String>> series = [
+    List<charts.Series<Register, String>> series = [
       charts.Series(
           id: 'Subscribers',
-          data: data,
-          domainFn: (SubscriberSeries series, _) => series.year,
-          measureFn: (SubscriberSeries series, _) => series.subscribers,
-          colorFn: (SubscriberSeries series, _) => series.barColor,
-          labelAccessorFn: (SubscriberSeries series, _) =>
-              '\$${series.subscribers.toString()}'),
+          data: recentRegister,
+          domainFn: (Register series, _) => series.date.toString(),
+          measureFn: (Register series, _) => series.litros,
+          labelAccessorFn: (Register series, _) =>
+              '\$${series.leitura.toString()}'),
     ];
 
     return charts.BarChart(
