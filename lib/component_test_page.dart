@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/buttons.dart';
 import 'package:flutter_application_1/components/form_fields.dart';
+import 'package:flutter_application_1/components/register_entry.dart';
 import 'package:flutter_application_1/components/variables.dart';
 import 'components/buttons.dart';
 import 'components/form_fields.dart';
@@ -660,10 +661,10 @@ class Home extends StatelessWidget {
                   Center(
                     child: Buttons.largeButton(
                       context,
-                      function: () {},
-                      texto: "Texto Desabilitado",
-                      textColor: Vars.disabledText,
-                      colors: [Vars.secondaryDisabled, Vars.secondaryDisabled],
+                      function: null,
+                      texto: "Novo Registro",
+                      textColor: Vars.offWhite,
+                      colors: Vars.secondaryGradient,
                     ),
                   ),
                 ],
@@ -682,7 +683,7 @@ class Home extends StatelessWidget {
                       TextEditingController(),
                       (p0) => null,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     FormFields.textFormField(
@@ -695,6 +696,12 @@ class Home extends StatelessWidget {
                   ],
                 ),
               ),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 50, bottom: 50),
+              color: Vars.backGroundGrey,
+              width: MediaQuery.of(context).size.width,
+              child: RegisterEntry.ReadingEntry(context),
             )
           ],
         ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/components/buttons.dart';
 import 'package:flutter_application_1/components/chart.dart';
 import 'package:flutter_application_1/components/register_form.dart';
 import 'package:flutter_application_1/components/register_list.dart';
+import 'package:flutter_application_1/components/variables.dart';
 
 import 'package:flutter_application_1/models/registers.dart';
 import 'dart:math';

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/components/buttons.dart';
+import 'package:flutter_application_1/components/variables.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -60,24 +62,12 @@ class HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 SizedBox(
-                  // Essa futura primeira tela será aonde os encarregados/secretario do setor irá informar as noticias do setor especifico
-                  // tipo deposito/expedição etc
-                  width: 150,
-                  height: 100,
-                  child: ElevatedButton(
-                    style: TextButton.styleFrom(
-                        backgroundColor: Colors.red[600],
-                        elevation: 15,
-                        shadowColor: Colors.red),
-                    onPressed: () {
-                      Navigator.of(context).pushReplacementNamed('/home');
-                    },
-                    child: const Text(
-                      'Informações setor',
-                      style: TextStyle(color: Colors.black),
-                    ),
-                  ),
-                ),
+                    // Essa futura primeira tela será aonde os encarregados/secretario do setor irá informar as noticias do setor especifico
+                    // tipo deposito/expedição etc
+                    width: 150,
+                    height: 100,
+                    child: Buttons.largeButton(context,
+                        colors: Vars.secondaryGradient)),
                 Container(
                   // Esse botão eu fiz com borda pois estou testando os mais agradaveis aos olhos, mas é tudo decoração
                   // nessa futura tela pretendo colocar uma API no site da tambasa, para verificação de produtos/noticias do site

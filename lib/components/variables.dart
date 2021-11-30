@@ -29,6 +29,23 @@ class Vars {
     Color.fromARGB(255, 255, 113, 113)
   ];
 
+  static Text textSmaller({
+    required String text,
+    bool isMono = false,
+    bool isBold = false,
+    Color color = Colors.white,
+  }) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontFamily: isMono ? "Roboto Mono" : "Roboto",
+        fontSize: 15,
+        fontWeight: (isBold == true) ? FontWeight.bold : FontWeight.normal,
+        color: color,
+      ),
+    );
+  }
+
   static Text textSmall({
     required String text,
     bool isMono = false,
