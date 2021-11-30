@@ -702,6 +702,12 @@ class Home extends StatelessWidget {
               color: Vars.backGroundGrey,
               width: MediaQuery.of(context).size.width,
               child: RegisterEntry.ReadingEntry(context, function: () {}),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 50, bottom: 50),
+              color: Vars.backGroundGrey,
+              width: MediaQuery.of(context).size.width,
+              child: RegisterEntry.BillEntry(context, function: () {}),
             )
           ],
         ),
