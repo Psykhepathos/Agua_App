@@ -69,8 +69,7 @@ class RegisterEntry {
                   height: 22,
                   child: ElevatedButton(
                     onPressed: function,
-                    child: Vars.icon(context, "Trash",
-                        color: Vars.redText, size: 22),
+                    child: Vars.icon("Trash", color: Vars.redText, size: 22),
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.zero,
                       shadowColor: Colors.transparent,
@@ -154,8 +153,7 @@ class RegisterEntry {
                   height: 22,
                   child: ElevatedButton(
                     onPressed: function,
-                    child: Vars.icon(context, "Trash",
-                        color: Vars.redText, size: 22),
+                    child: Vars.icon("Trash", color: Vars.redText, size: 22),
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.zero,
                       shadowColor: Colors.transparent,

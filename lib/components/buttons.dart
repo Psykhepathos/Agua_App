@@ -61,7 +61,7 @@ class Buttons {
       ),
       child: ElevatedButton(
         onPressed: function,
-        child: Vars.icon(context, icon, color: iconColor),
+        child: Vars.icon(icon, color: iconColor),
         style: ButtonStyle(
           padding:
               MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.zero),
@@ -103,7 +103,7 @@ class Buttons {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Vars.icon(context, icon, color: iconColor),
+            Vars.icon(icon, color: iconColor),
             SizedBox(
               width: 10,
             ),
@@ -217,26 +217,6 @@ class Buttons {
             )
           ],
         ),
-      ),
-    );
-  }
-
-  static Widget onlyIcon(context,
-      {String icon = "teste",
-      int size = 24,
-      Color iconColor = Vars.offWhite,
-      Function()? function}) {
-    return Container(
-      width: MediaQuery.of(context).size.height / 50,
-      height: MediaQuery.of(context).size.height / 50,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.zero,
-          primary: Colors.transparent,
-          shadowColor: Colors.transparent,
-        ),
-        onPressed: function,
-        child: Vars.icon(context, icon, color: iconColor),
       ),
     );
   }
