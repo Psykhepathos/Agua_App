@@ -155,23 +155,60 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                 height: 285,
                 color: Vars.primary,
               ),
+              Center(
+                child: Vars.textMedium(
+                  context,
+                  text: 'CASA #2',
+                  isBold: true,
+                ),
+              ),
               Column(
                 children: [
                   Center(
                     child: SizedBox(
                       height: 260,
-                      child: Center(
-                        child: SizedBox(
-                          height: 200,
-                          child: Chart(recentRegister: _sevenRegisters),
-                        ),
+                      child: Column(
+                        children: [
+                          Center(
+                            child: Container(
+                              margin: EdgeInsets.only(top: 35),
+                              height: 200,
+                              child: Chart(recentRegister: _sevenRegisters),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(right: 3),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.white70),
+                                height: 7,
+                                width: 7,
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.white),
+                                height: 10,
+                                width: 10,
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(left: 3),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.white70),
+                                height: 7,
+                                width: 7,
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
                   Stack(children: <Widget>[
-                    const SizedBox(
-                      height: 25,
-                    ),
                     Center(
                       child: SizedBox(
                         height: 50,
