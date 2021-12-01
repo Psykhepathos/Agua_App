@@ -75,16 +75,12 @@ class _EsqueciSenhaState extends State<EsqueciSenha> {
                             filled: true),
                       ),
                     ),
-                    SizedBox(
-                      width: 50,
-                      height: 50,
-                      child: Buttons.squareButton(
-                        context,
-                        icon: "Reload",
-                        backgroundColors: [Vars.offWhite, Vars.offWhite],
-                        iconColor: Vars.secondary,
-                        function: () {},
-                      ),
+                    Buttons.squareButton(
+                      context,
+                      icon: "Reload",
+                      backgroundColors: [Vars.offWhite, Vars.offWhite],
+                      iconColor: Vars.secondary,
+                      function: () {},
                     )
                   ],
                 ),
@@ -163,16 +159,18 @@ class _EsqueciSenhaState extends State<EsqueciSenha> {
                         filled: true),
                   ),
                 ),
-                Buttons.largeButton(context,
-                    colors: Vars.secondaryGradient,
-                    texto: 'Atualizar',
-                    width: 350, function: () {
-                  setState(
-                    () {
-                      Navigator.of(context).pushReplacementNamed('/cadastro');
-                    },
-                  );
-                })
+                Buttons.largeButton(
+                  context,
+                  colors: Vars.secondaryGradient,
+                  texto: 'Atualizar',
+                  function: () {
+                    setState(
+                      () {
+                        Navigator.of(context).pushReplacementNamed('/cadastro');
+                      },
+                    );
+                  },
+                )
               ],
             ),
           )),

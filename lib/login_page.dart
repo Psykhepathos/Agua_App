@@ -12,8 +12,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String produtivo = '15857';
-  String senha = 'tambasa';
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -36,9 +34,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 65,
                     width: 350,
                     child: TextField(
-                      onChanged: (text) {
-                        produtivo = text;
-                      },
+                      onChanged: (text) {},
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15)),
@@ -61,9 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                     width: 350,
                     height: 60,
                     child: TextField(
-                      onChanged: (text) {
-                        senha = text;
-                      },
+                      onChanged: (text) {},
                       obscureText: true,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -122,8 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                     margin: EdgeInsets.only(top: 150),
                     child: Buttons.largeButton(context,
                         colors: Vars.secondaryGradient,
-                        texto: 'CADASTRAR',
-                        width: 350, function: () {
+                        texto: 'CADASTRAR', function: () {
                       setState(
                         () {
                           Navigator.of(context)
