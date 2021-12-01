@@ -714,7 +714,34 @@ class Home extends StatelessWidget {
                 color: Vars.primary,
                 width: MediaQuery.of(context).size.width,
                 child: Buttons.doubleButton(context,
-                    button1: () {}, button2: () {}))
+                    button1: () {}, button2: () {})),
+            Container(
+              color: Vars.primary,
+              width: MediaQuery.of(context).size.width,
+              padding: EdgeInsets.only(top: 50, bottom: 50),
+              child: Form(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FormFields.sendTextFormField(
+                        context, TextEditingController(),
+                        onSubmited: (p0) => null,
+                        buttonFunction: () {},
+                        icon: "Search"),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    FormFields.sendTextFormField(
+                        context, TextEditingController(),
+                        onChanged: (p0) => null,
+                        buttonFunction: () {},
+                        textColor: Vars.offWhite,
+                        backgroundColor: Vars.disabledText,
+                        icon: "Right")
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),

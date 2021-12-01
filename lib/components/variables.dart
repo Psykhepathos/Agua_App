@@ -100,7 +100,7 @@ class Vars {
   static Icon icon(context, String icon,
       {color = Colors.white, double size = 0}) {
     Map<String, String> names = {
-      "search": "magnify",
+      "Search": "magnify",
       "Settings": "cog-outline",
       "RightArrow": "arrow-right",
       "Reload": "autorenew",

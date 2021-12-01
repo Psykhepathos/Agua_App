@@ -40,18 +40,20 @@ class Buttons {
     );
   }
 
-  static Widget squareButton(
-    context, {
-    required String icon,
-    List<Color> backgroundColors = Vars.secondaryGradient,
-    iconColor = Colors.white,
-    Function()? function,
-  }) {
+  static Widget squareButton(context,
+      {required String icon,
+      List<Color> backgroundColors = Vars.secondaryGradient,
+      iconColor = Colors.white,
+      Function()? function,
+      bool rightButton = false}) {
     return Container(
       height: MediaQuery.of(context).size.height / 16.83636,
       width: MediaQuery.of(context).size.height / 16.83636,
       decoration: BoxDecoration(
-        borderRadius: Vars.borderRadius,
+        borderRadius: rightButton
+            ? BorderRadius.only(
+                topRight: Radius.circular(13), bottomRight: Radius.circular(13))
+            : Vars.borderRadius,
         gradient: LinearGradient(
           begin: Alignment(0.0, -1.0),
           end: Alignment(0.0, 1.0),

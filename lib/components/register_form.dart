@@ -31,8 +31,9 @@ class _RegisterFormState extends State<RegisterForm> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      shape: RoundedRectangleBorder(borderRadius: Vars.borderRadius),
       title: Align(
-        alignment: Alignment(-0.9, 0),
+        alignment: const Alignment(-0.9, 0),
         child: Vars.textMedium(context,
             text: "Registro de Leitura", color: Vars.activeText),
       ),

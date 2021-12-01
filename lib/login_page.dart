@@ -29,6 +29,11 @@ class _LoginPageState extends State<LoginPage> {
                     height: 350,
                     child: Image.asset('assets/images/tambasa.png'),
                   ),
+                  FormFields.textFormField(
+                    context,
+                    TextEditingController(),
+                    hint: "E-mail",
+                  ),
                   Container(
                     margin: EdgeInsets.only(bottom: 10),
                     height: 65,
