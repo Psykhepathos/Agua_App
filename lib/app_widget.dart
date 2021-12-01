@@ -15,6 +15,7 @@ class AppWidget extends StatelessWidget {
     initializeDateFormatting('pt_BR', null);
     // ignore: avoid_unnecessary_containers
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData().copyWith(
           // change the focus border color of the TextField
           colorScheme: ThemeData()
@@ -23,7 +24,7 @@ class AppWidget extends StatelessWidget {
           // change the focus border color when the errorText is set
           errorColor: Colors.purple,
         ),
-        initialRoute: '/pagina_principal',
+        initialRoute: '/login_page',
         routes: {
           '/login_page': (context) => const LoginPage(),
           '/pagina_principal': (context) => const PaginaPrincipal(),
