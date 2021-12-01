@@ -25,7 +25,8 @@ class Buttons {
       ),
       child: ElevatedButton(
         onPressed: function,
-        child: Vars.textSmaller(text: texto, isBold: true, color: textColor),
+        child: Vars.textSmaller(context,
+            text: texto, isBold: true, color: textColor),
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
           shadowColor: MaterialStateProperty.all<Color>(Colors.transparent),
@@ -106,7 +107,8 @@ class Buttons {
             SizedBox(
               width: 10,
             ),
-            Vars.textSmall(text: texto, isBold: true, color: textColor),
+            Vars.textSmall(context,
+                text: texto, isBold: true, color: textColor),
           ],
         ),
         style: ButtonStyle(
@@ -166,6 +168,7 @@ class Buttons {
                     width: (MediaQuery.of(context).size.width / 1.17582) / 2,
                     child: Center(
                       child: Vars.textSmall(
+                        context,
                         text: "Mensal",
                         color:
                             (selected == 1 ? Vars.offWhite : Vars.activeText),
@@ -204,6 +207,7 @@ class Buttons {
                   width: (MediaQuery.of(context).size.width / 1.17582) / 2,
                   child: Center(
                     child: Vars.textSmall(
+                      context,
                       text: "Diário",
                       color: (selected == 2 ? Vars.offWhite : Vars.activeText),
                     ),

@@ -29,6 +29,7 @@ class RegisterEntry {
                 CircleAvatar(
                     backgroundColor: Vars.primaryDark,
                     child: Vars.textSmaller(
+                      context,
                       text: day,
                     )),
                 SizedBox(
@@ -38,19 +39,21 @@ class RegisterEntry {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Vars.textSmall(text: date, color: Vars.blackText),
+                    Vars.textSmall(context, text: date, color: Vars.blackText),
                     Row(
                       children: [
-                        Vars.textSmaller(
+                        Vars.textSmaller(context,
                             text: "Leitura:", color: Vars.blackText),
                         SizedBox(
                           width: 10,
                         ),
-                        Vars.textSmaller(text: reading1, color: Vars.blackText),
+                        Vars.textSmaller(context,
+                            text: reading1, color: Vars.blackText),
                         SizedBox(
                           width: 3,
                         ),
-                        Vars.textSmaller(text: reading2, color: Vars.redText)
+                        Vars.textSmaller(context,
+                            text: reading2, color: Vars.redText)
                       ],
                     )
                   ],
@@ -74,7 +77,8 @@ class RegisterEntry {
                     ),
                   ),
                 ),
-                Vars.textSmaller(text: "$liters Litros", color: Vars.activeText)
+                Vars.textSmaller(context,
+                    text: "$liters Litros", color: Vars.activeText)
               ],
             )
           ],
@@ -108,6 +112,7 @@ class RegisterEntry {
                 CircleAvatar(
                     backgroundColor: Vars.primaryDark,
                     child: Vars.textSmaller(
+                      context,
                       text: day,
                     )),
                 SizedBox(
@@ -117,10 +122,11 @@ class RegisterEntry {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Vars.textSmall(text: date, color: Vars.blackText),
+                    Vars.textSmall(context, text: date, color: Vars.blackText),
                     Row(
                       children: [
                         Vars.textSmaller(
+                          context,
                           text: "Preço: ",
                           color: Vars.blackText,
                         ),
@@ -128,6 +134,7 @@ class RegisterEntry {
                           width: 10,
                         ),
                         Vars.textSmaller(
+                          context,
                           text: "R\$  $price",
                           color: Vars.redText,
                         ),

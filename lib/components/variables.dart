@@ -29,7 +29,8 @@ class Vars {
     Color.fromARGB(255, 255, 113, 113)
   ];
 
-  static Text textSmaller({
+  static Text textSmaller(
+    context, {
     required String text,
     bool isMono = false,
     bool isBold = false,
@@ -39,14 +40,15 @@ class Vars {
       text,
       style: TextStyle(
         fontFamily: isMono ? "Roboto Mono" : "Roboto",
-        fontSize: 15,
+        fontSize: MediaQuery.of(context).size.height / 60,
         fontWeight: (isBold == true) ? FontWeight.bold : FontWeight.normal,
         color: color,
       ),
     );
   }
 
-  static Text textSmall({
+  static Text textSmall(
+    context, {
     required String text,
     bool isMono = false,
     bool isBold = false,
@@ -56,14 +58,14 @@ class Vars {
       text,
       style: TextStyle(
         fontFamily: isMono ? "Roboto Mono" : "Roboto",
-        fontSize: 18,
+        fontSize: MediaQuery.of(context).size.height / 50,
         fontWeight: (isBold == true) ? FontWeight.bold : FontWeight.normal,
         color: color,
       ),
     );
   }
 
-  static Text textMedium(
+  static Text textMedium(context,
       {required String text,
       bool isMono = false,
       bool isBold = false,
@@ -72,14 +74,14 @@ class Vars {
       text,
       style: TextStyle(
         fontFamily: isMono ? "Roboto Mono" : "Roboto",
-        fontSize: 24,
+        fontSize: MediaQuery.of(context).size.height / 40,
         fontWeight: (isBold == true) ? FontWeight.bold : FontWeight.normal,
         color: color,
       ),
     );
   }
 
-  static Text textLarge(
+  static Text textLarge(context,
       {required String text,
       bool isMono = false,
       bool isBold = false,
@@ -88,7 +90,7 @@ class Vars {
       text,
       style: TextStyle(
         fontFamily: isMono ? "Roboto Mono" : "Roboto",
-        fontSize: 28,
+        fontSize: MediaQuery.of(context).size.height / 30,
         fontWeight: (isBold == true) ? FontWeight.bold : FontWeight.normal,
         color: color,
       ),
