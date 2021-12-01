@@ -681,7 +681,7 @@ class Home extends StatelessWidget {
                     FormFields.textFormField(
                       context,
                       TextEditingController(),
-                      (p0) => null,
+                      onSubmited: (p0) => null,
                     ),
                     const SizedBox(
                       height: 20,
@@ -689,7 +689,7 @@ class Home extends StatelessWidget {
                     FormFields.textFormField(
                       context,
                       TextEditingController(),
-                      (p0) => null,
+                      onChanged: (p0) => null,
                       textColor: Vars.offWhite,
                       backgroundColor: Vars.disabledText,
                     )
