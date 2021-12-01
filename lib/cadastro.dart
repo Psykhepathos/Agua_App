@@ -21,7 +21,7 @@ class _CadastroState extends State<Cadastro> {
             child: Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(right: 200),
+                  margin: EdgeInsets.only(right: 240),
                   child: Buttons.largeButton(
                     context,
                     colors: [

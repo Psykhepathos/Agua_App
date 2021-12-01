@@ -167,7 +167,8 @@ class _EsqueciSenhaState extends State<EsqueciSenha> {
                   function: () {
                     setState(
                       () {
-                        Navigator.of(context).pushReplacementNamed('/cadastro');
+                        Navigator.of(context)
+                            .pushReplacementNamed('/login_page');
                       },
                     );
                   },
