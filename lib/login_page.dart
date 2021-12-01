@@ -122,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 170),
+                        margin: EdgeInsets.only(top: 150),
                         child: Buttons.largeButton(context,
                             colors: Vars.secondaryGradient,
                             texto: 'CADASTRAR',
