@@ -10,7 +10,19 @@ class Buttons {
     double width = 0,
     Color textColor = Colors.white,
     List<Color> colors = Vars.secondaryGradient,
+    int textSize = 0,
   }) {
+    if (textSize > 3) {
+      textSize = 3;
+    } else if (textSize < 0) {
+      textSize = 0;
+    }
+    List<Widget> list = [
+      Vars.textSmaller(context, text: texto, isBold: true, color: textColor),
+      Vars.textSmall(context, text: texto, isBold: true, color: textColor),
+      Vars.textMedium(context, text: texto, isBold: true, color: textColor),
+      Vars.textLarge(context, text: texto, isBold: true, color: textColor),
+    ];
     return Container(
       height: MediaQuery.of(context).size.height / 16.83636,
       width: (width == 0) ? MediaQuery.of(context).size.width / 1.17582 : width,
@@ -25,8 +37,7 @@ class Buttons {
       ),
       child: ElevatedButton(
         onPressed: function,
-        child: Vars.textSmaller(context,
-            text: texto, isBold: true, color: textColor),
+        child: list[textSize],
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
           shadowColor: MaterialStateProperty.all<Color>(Colors.transparent),

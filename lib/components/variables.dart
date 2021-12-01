@@ -29,6 +29,10 @@ class Vars {
     Color.fromARGB(255, 255, 113, 113)
   ];
 
+  static double mainHeight(context) {
+    return MediaQuery.of(context).size.height / 16.83636;
+  }
+
   static Text textSmaller(
     context, {
     required String text,

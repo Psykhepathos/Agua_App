@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/chart/chart.dart';
 import 'package:flutter_application_1/components/buttons.dart';
@@ -10,6 +11,7 @@ import 'dart:math';
 import '/models/registers.dart';
 import '/components/register_form.dart';
 import '/components/register_list.dart';
+import 'components/form_fields.dart';
 
 class PaginaPrincipal extends StatefulWidget {
   const PaginaPrincipal({Key? key}) : super(key: key);
@@ -121,6 +123,10 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
     });
   }
 
+  List list = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  int _current = 0;
+  final CarouselController _controller = CarouselController();
+
   @override
   Widget build(BuildContext context) {
     _setarRecenteRegistro;
@@ -145,138 +151,152 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                   onPressed: () {},
                 ),
               ),
-              // ...
             )),
-        body: SingleChildScrollView(
-          child: Container(
-            color: Vars.backGroundGrey,
-            child: Stack(children: <Widget>[
-              Container(
-                height: 285,
-                color: Vars.primary,
-              ),
-              Center(
-                child: Vars.textMedium(
-                  context,
-                  text: 'CASA #2',
-                  isBold: true,
-                ),
-              ),
-              Column(
+        body: Container(
+          color: Vars.backGroundGrey,
+          child: Stack(children: <Widget>[
+            Container(
+              /*
+              child: Column(
                 children: [
-                  Center(
-                    child: SizedBox(
-                      height: 260,
-                      child: Column(
-                        children: [
-                          Center(
-                            child: Container(
-                              margin: EdgeInsets.only(top: 35),
-                              height: 200,
-                              child: Chart(recentRegister: _sevenRegisters),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(right: 3),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.white70),
-                                height: 7,
-                                width: 7,
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.white),
-                                height: 10,
-                                width: 10,
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(left: 3),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.white70),
-                                height: 7,
-                                width: 7,
-                              ),
-                            ],
-                          ),
-                        ],
+                  Expanded(
+                    child: CarouselSlider(
+                      items: list
+                          .map((item) => Container(
+                                child: Center(child: Text(item.toString())),
+                                color: Colors.green,
+                              ))
+                          .toList(),
+                      carouselController: _controller,
+                      options: CarouselOptions(
+                          autoPlay: false,
+                          enlargeCenterPage: false,
+                          onPageChanged: (index, reason) {}),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: list.asMap().entries.map((entry) {
+                      return GestureDetector(
+                        onTap: () => _controller.animateToPage(entry.key),
+                        child: Container(
+                          width: 12.0,
+                          height: 12.0,
+                          margin: EdgeInsets.symmetric(
+                              vertical: 8.0, horizontal: 4.0),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: (Theme.of(context).brightness ==
+                                          Brightness.dark
+                                      ? Colors.white
+                                      : Colors.black)
+                                  .withOpacity(
+                                      _current == entry.key ? 0.9 : 0.4)),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ],
+              ),*/
+              height: MediaQuery.of(context).size.height / 3,
+              color: Vars.primary,
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment(0, -1),
+                    child: Center(
+                      child: Vars.textMedium(
+                        context,
+                        text: 'CASA #2',
+                        isBold: true,
                       ),
                     ),
                   ),
-                  Stack(children: <Widget>[
-                    Center(
-                      child: SizedBox(
-                        height: 50,
-                        width: 350,
-                        child: TextField(
-                          onChanged: (text) {},
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15)),
-                            labelText: 'Buscar',
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: Colors.grey, width: 0.0),
-                                borderRadius: BorderRadius.circular(15)),
-                            fillColor: Colors.white,
-                            filled: true,
-                            suffixIcon: Container(
-                              width: 40,
-                              height: 60,
-                              decoration: const BoxDecoration(
-                                  color: Color.fromRGBO(255, 149, 149, 1),
-                                  borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(15),
-                                      bottomRight: Radius.circular(15))),
-                              child: IconButton(
-                                color: Colors.white,
-                                icon: const Icon(
-                                  Icons.search,
-                                  color: Colors.white,
-                                ),
-                                onPressed: () {},
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                  Center(
+                    child: Container(
+                      margin: EdgeInsets.only(top: 35),
+                      height: MediaQuery.of(context).size.height / 6,
+                      child: Chart(recentRegister: _sevenRegisters),
                     ),
-                  ]),
-                  const SizedBox(
-                    height: 10,
                   ),
                   SizedBox(
-                      height: 50,
-                      width: 350,
-                      child: Buttons.largeButton(
-                        context,
-                        function: () => _openregisterFormModal(context),
-                        texto: 'Novo Registro',
-                      )),
-                  const SizedBox(
-                    height: 10,
+                    height: (MediaQuery.of(context).size.height / 18.83636) / 2,
                   ),
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      '           Ultimos Registros',
-                      style: TextStyle(color: Colors.grey[700]),
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: 3),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white70),
+                        height: MediaQuery.of(context).size.height / 100,
+                        width: MediaQuery.of(context).size.height / 100,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white),
+                        height: MediaQuery.of(context).size.height / 80,
+                        width: MediaQuery.of(context).size.height / 80,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 3),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white70),
+                        height: MediaQuery.of(context).size.height / 100,
+                        width: MediaQuery.of(context).size.height / 100,
+                      ),
+                    ],
                   ),
-                  Container(
-                      height: 289,
-                      alignment: Alignment.topCenter,
-                      child: RegisterList(_registers, _removeRegister)),
                 ],
               ),
-            ]),
-          ),
+            ),
+            Column(
+              children: [
+                SizedBox(
+                  height: (MediaQuery.of(context).size.height / 3) -
+                      (MediaQuery.of(context).size.height / 16.83636) / 2,
+                ),
+                Stack(children: <Widget>[
+                  Center(
+                    child: FormFields.sendTextFormField(
+                      context,
+                      TextEditingController(),
+                      icon: "Search",
+                      onChanged: (text) {},
+                      obscure: false,
+                      hint: "Buscar",
+                      buttonFunction: () {},
+                    ),
+                  ),
+                ]),
+                SizedBox(
+                  height: MediaQuery.of(context).size.width / 30,
+                ),
+                Buttons.largeButton(
+                  context,
+                  function: () => _openregisterFormModal(context),
+                  texto: 'Novo Registro',
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.width / 30,
+                ),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    '           Ultimos Registros',
+                    style: TextStyle(color: Colors.grey[700]),
+                  ),
+                ),
+                Container(
+                    height: MediaQuery.of(context).size.height / 2.67,
+                    alignment: Alignment.topCenter,
+                    child: RegisterList(_registers, _removeRegister)),
+              ],
+            ),
+          ]),
         ),
         bottomNavigationBar: SafeArea(
           child: BottomNavigationBar(
