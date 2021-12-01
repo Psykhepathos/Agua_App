@@ -149,7 +149,12 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                   Center(
                     child: SizedBox(
                       height: 260,
-                      child: Chart(recentRegister: _sevenRegisters),
+                      child: Center(
+                        child: SizedBox(
+                          height: 200,
+                          child: Chart(recentRegister: _sevenRegisters),
+                        ),
+                      ),
                     ),
                   ),
                   Stack(children: <Widget>[

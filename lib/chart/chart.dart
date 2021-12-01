@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:flutter_application_1/components/variables.dart';
 import 'package:flutter_application_1/models/registers.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_application_1/pagina_principal.dart';
@@ -20,7 +21,13 @@ class Chart extends StatelessWidget {
         domainFn: (Register series, _) =>
             capitalize(DateFormat('EEE', 'pt_BR').format(series.date)),
         measureFn: (Register series, _) => series.litros,
-        colorFn: (_, __) => charts.MaterialPalette.white,
+        colorFn: (Register series, __) {
+          if (series.date.weekday == DateTime.now().weekday) {
+            return charts.ColorUtil.fromDartColor(Vars.secondary);
+          } else {
+            return charts.MaterialPalette.white;
+          }
+        },
         outsideLabelStyleAccessorFn: (_, __) {
           return charts.TextStyleSpec(color: charts.MaterialPalette.white);
         },
