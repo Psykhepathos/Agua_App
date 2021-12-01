@@ -133,8 +133,6 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
             child: AppBar(
               elevation: 0,
               backgroundColor: Vars.primary,
-
-              // ...
             )),
         body: SingleChildScrollView(
           child: Container(
@@ -227,6 +225,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                       child: RegisterList(_registers, _removeRegister)),
                 ],
               ),
+              Buttons.onlyIcon(context, icon: "Settings")
             ]),
           ),
         ),

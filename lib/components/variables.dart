@@ -97,7 +97,8 @@ class Vars {
     );
   }
 
-  static Icon icon(String icon, {color = Colors.white, double size = 0}) {
+  static Icon icon(context, String icon,
+      {color = Colors.white, double size = 0}) {
     Map<String, String> names = {
       "search": "magnify",
       "Settings": "cog-outline",
@@ -124,19 +125,19 @@ class Vars {
       if (icon == "RightArrow") {
         return Icon(
           Icons.arrow_right_alt,
-          size: (size == 0) ? 24 : size,
+          size: (size == 0) ? MediaQuery.of(context).size.height / 35 : size,
           color: color,
         );
       }
       return Icon(
         MdiIcons.fromString(names[icon]!),
-        size: (size == 0) ? 24 : size,
+        size: (size == 0) ? MediaQuery.of(context).size.height / 35 : size,
         color: color,
       );
     } else {
       return Icon(
         Icons.help_outline,
-        size: (size == 0) ? 24 : size,
+        size: (size == 0) ? MediaQuery.of(context).size.height / 35 : size,
         color: color,
       );
     }
