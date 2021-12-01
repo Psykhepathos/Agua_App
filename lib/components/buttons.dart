@@ -25,7 +25,7 @@ class Buttons {
       ),
       child: ElevatedButton(
         onPressed: function,
-        child: Vars.textSmall(text: texto, isBold: true, color: textColor),
+        child: Vars.textSmaller(text: texto, isBold: true, color: textColor),
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
           shadowColor: MaterialStateProperty.all<Color>(Colors.transparent),

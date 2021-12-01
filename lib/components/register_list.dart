@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/components/register_entry.dart';
 import '/models/registers.dart';
 import 'package:intl/intl.dart';
 
@@ -27,7 +28,22 @@ class RegisterList extends StatelessWidget {
         shrinkWrap: true,
         itemBuilder: (_, index) {
           final rg = registers[index];
-          return Card(
+          return Column(
+            children: [
+              RegisterEntry.ReadingEntry(
+                context,
+                day: DateFormat('EEE', 'pt_BR').format(rg.date),
+                date: DateFormat('d/M/y').format(rg.date),
+                reading1: rg.leitura.toString().padLeft(8, '0').substring(0, 4),
+                reading2: rg.leitura.toString().padLeft(9, '0').substring(5, 9),
+                liters: rg.litros,
+                function: () {},
+              ),
+              SizedBox(
+                height: 10,
+              )
+            ],
+          ); /*Card(
             elevation: 3,
             child: Container(
               width: 350,
@@ -44,12 +60,13 @@ class RegisterList extends StatelessWidget {
                       child: Container(
                         alignment: Alignment.center,
                         child: Text(
-                          capitalize(DateFormat('EEE', 'pt_BR').format(rg.date)),
+                          capitalize(
+                              DateFormat('EEE', 'pt_BR').format(rg.date)),
                           style: TextStyle(
                             color: Colors.white,
                           ),
                         ),
-                      )),
+**                      )),
                   Row(
                     children: [
                       Column(
@@ -64,7 +81,7 @@ class RegisterList extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Row(
+**                          Row(
                             children: [
                               Text('Leitura:'),
                               Container(
@@ -78,7 +95,7 @@ class RegisterList extends StatelessWidget {
                                         text: rg.leitura
                                             .toString()
                                             .padLeft(9, '0')
-                                            .substring(5, 9),
+**                                            .substring(5, 9),
                                         style: TextStyle(
                                           color: const Color.fromRGBO(
                                               255, 149, 149, 1),
@@ -89,7 +106,7 @@ class RegisterList extends StatelessWidget {
                         ],
                       )
                     ],
-                  ),
+**                  ),
                   Container(
                     margin: EdgeInsets.only(left: 45, bottom: 15),
                     child: Column(
@@ -119,7 +136,7 @@ class RegisterList extends StatelessWidget {
                 ],
               ),
             ),
-          );
+          );*/
         },
       ),
     );

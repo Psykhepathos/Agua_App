@@ -111,103 +111,98 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
             preferredSize: Size.fromHeight(32.0), // here the desired height
             child: AppBar(
               elevation: 0,
-              backgroundColor: const Color.fromRGBO(92, 190, 191, 1),
+              backgroundColor: Vars.primary,
 
               // ...
             )),
         body: SingleChildScrollView(
-          child: Stack(children: <Widget>[
-            Container(
-              height: 285,
-              color: const Color.fromRGBO(92, 190, 191, 1),
-            ),
-            Column(
-              children: [
-                Center(
-                  child: SizedBox(
-                    height: 260,
-                    child: Chart(recentRegister: _sevenRegisters),
-                  ),
-                ),
-                Stack(children: <Widget>[
-                  const SizedBox(
-                    height: 25,
-                  ),
+          child: Container(
+            color: Vars.backGroundGrey,
+            child: Stack(children: <Widget>[
+              Container(
+                height: 285,
+                color: Vars.primary,
+              ),
+              Column(
+                children: [
                   Center(
                     child: SizedBox(
-                      height: 50,
-                      width: 350,
-                      child: TextField(
-                        onChanged: (text) {},
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15)),
-                          labelText: 'Buscar',
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Colors.grey, width: 0.0),
-                              borderRadius: BorderRadius.circular(15)),
-                          fillColor: Colors.white,
-                          filled: true,
-                          suffixIcon: Container(
-                            width: 40,
-                            height: 60,
-                            decoration: const BoxDecoration(
-                                color: Color.fromRGBO(255, 149, 149, 1),
-                                borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(15),
-                                    bottomRight: Radius.circular(15))),
-                            child: IconButton(
-                              color: Colors.white,
-                              icon: const Icon(
-                                Icons.search,
+                      height: 260,
+                      child: Chart(recentRegister: _sevenRegisters),
+                    ),
+                  ),
+                  Stack(children: <Widget>[
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    Center(
+                      child: SizedBox(
+                        height: 50,
+                        width: 350,
+                        child: TextField(
+                          onChanged: (text) {},
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15)),
+                            labelText: 'Buscar',
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                    color: Colors.grey, width: 0.0),
+                                borderRadius: BorderRadius.circular(15)),
+                            fillColor: Colors.white,
+                            filled: true,
+                            suffixIcon: Container(
+                              width: 40,
+                              height: 60,
+                              decoration: const BoxDecoration(
+                                  color: Color.fromRGBO(255, 149, 149, 1),
+                                  borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(15),
+                                      bottomRight: Radius.circular(15))),
+                              child: IconButton(
                                 color: Colors.white,
+                                icon: const Icon(
+                                  Icons.search,
+                                  color: Colors.white,
+                                ),
+                                onPressed: () {},
                               ),
-                              onPressed: () {},
                             ),
                           ),
                         ),
                       ),
                     ),
+                  ]),
+                  const SizedBox(
+                    height: 10,
                   ),
-                ]),
-                const SizedBox(
-                  height: 10,
-                ),
-                SizedBox(
-                  height: 50,
-                  width: 350,
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(13),
-                        ),
-                      ),
+                  SizedBox(
+                      height: 50,
+                      width: 350,
+                      child: Buttons.largeButton(
+                        context,
+                        function: () => _openregisterFormModal(context),
+                        texto: 'Novo Registro',
+                      )),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      '           Ultimos Registros',
+                      style: TextStyle(color: Colors.grey[700]),
                     ),
-                    // Este é o botão de pular de tela, usei tela nomeavel pois terão varias outras telas.
-                    onPressed: () => _openregisterFormModal(context),
-                    child: const Text('Novo Registro'),
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    '           Ultimos Registros',
-                    style: TextStyle(color: Colors.grey[700]),
-                  ),
-                ),
-                Container(
-                    height: 289,
-                    alignment: Alignment.topCenter,
-                    child: RegisterList(_registers)),
-              ],
-            ),
-          ]),
+                  Container(
+                      height: 289,
+                      alignment: Alignment.topCenter,
+                      child: RegisterList(_registers)),
+                ],
+              ),
+            ]),
+          ),
         ),
         bottomNavigationBar: SafeArea(
           child: BottomNavigationBar(
