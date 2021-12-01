@@ -1,5 +1,7 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/components/buttons.dart';
+import 'package:flutter_application_1/components/form_fields.dart';
+import 'package:flutter_application_1/components/variables.dart';
 import '/components/register_form.dart';
 import '/components/register_list.dart';
 
@@ -11,7 +13,7 @@ class RegisterForm extends StatefulWidget {
   @override
   State<RegisterForm> createState() => _RegisterFormState();
 }
-  
+
 class _RegisterFormState extends State<RegisterForm> {
   final registroController = TextEditingController();
 
@@ -28,21 +30,40 @@ class _RegisterFormState extends State<RegisterForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-        elevation: 5,
+    return AlertDialog(
+      title: Align(
+        alignment: Alignment(-0.9, 0),
+        child: Vars.textMedium(context,
+            text: "Registro de Leitura", color: Vars.activeText),
+      ),
+      backgroundColor: Vars.backGroundGrey,
+      insetPadding: EdgeInsets.all((MediaQuery.of(context).size.height -
+              MediaQuery.of(context).size.height / 1.09184) /
+          3),
+      contentPadding:
+          EdgeInsets.all(MediaQuery.of(context).size.height / 30.57143),
+      content: Container(
+        height: MediaQuery.of(context).size.height / 6,
+        color: Vars.backGroundGrey,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            TextField(
-              controller: registroController,
+            FormFields.textFormField(
+              context,
+              registroController,
+              hint: "Registro",
+              onSubmited: (_) => _submitForm(),
               keyboardType: TextInputType.number,
-              onSubmitted: (_) => _submitForm(),
-              decoration: InputDecoration(labelText: 'Registro'),
+              maxLenght: 8,
             ),
-            TextButton(
-              onPressed: _submitForm,
-              child: Text('Registrar'),
-            )
+            Buttons.largeButton(
+              context,
+              texto: "Registrar",
+              function: _submitForm,
+            ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }

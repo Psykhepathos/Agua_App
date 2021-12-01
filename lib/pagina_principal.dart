@@ -90,7 +90,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
     ),
   ];
   _openregisterFormModal(BuildContext context) {
-    showModalBottomSheet(
+    showDialog(
         context: context,
         builder: (_) {
           return RegisterForm(_addRegister);
@@ -285,7 +285,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
                 label: 'Home',
-                backgroundColor: Color.fromRGBO(92, 190, 191, 1),
+                backgroundColor: Vars.primary,
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.attach_money),
