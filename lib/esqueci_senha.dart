@@ -36,6 +36,7 @@ class _EsqueciSenhaState extends State<EsqueciSenha> {
                             .pushReplacementNamed('/login_page');
                       });
                     },
+                    textSize: 2,
                     texto: '<  Alterar senha',
                     textColor: Colors.white,
                   ),

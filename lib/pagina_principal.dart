@@ -142,7 +142,9 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
               backgroundColor: Vars.primary,
               leading: IconButton(
                 icon: Vars.icon(context, "Settings"),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushReplacementNamed('/login_page');
+                },
               ),
               flexibleSpace: Align(
                 alignment: Alignment.centerRight,
@@ -152,151 +154,154 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                 ),
               ),
             )),
-        body: Container(
-          color: Vars.backGroundGrey,
-          child: Stack(children: <Widget>[
-            Container(
-              /*
-              child: Column(
-                children: [
-                  Expanded(
-                    child: CarouselSlider(
-                      items: list
-                          .map((item) => Container(
-                                child: Center(child: Text(item.toString())),
-                                color: Colors.green,
-                              ))
-                          .toList(),
-                      carouselController: _controller,
-                      options: CarouselOptions(
-                          autoPlay: false,
-                          enlargeCenterPage: false,
-                          onPageChanged: (index, reason) {}),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: list.asMap().entries.map((entry) {
-                      return GestureDetector(
-                        onTap: () => _controller.animateToPage(entry.key),
-                        child: Container(
-                          width: 12.0,
-                          height: 12.0,
-                          margin: EdgeInsets.symmetric(
-                              vertical: 8.0, horizontal: 4.0),
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: (Theme.of(context).brightness ==
-                                          Brightness.dark
-                                      ? Colors.white
-                                      : Colors.black)
-                                  .withOpacity(
-                                      _current == entry.key ? 0.9 : 0.4)),
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                ],
-              ),*/
-              height: MediaQuery.of(context).size.height / 3,
-              color: Vars.primary,
-              child: Column(
-                children: [
-                  Align(
-                    alignment: Alignment(0, -1),
-                    child: Center(
-                      child: Vars.textMedium(
-                        context,
-                        text: 'CASA #2',
-                        isBold: true,
+        body: SingleChildScrollView(
+          child: Container(
+            color: Vars.backGroundGrey,
+            child: Stack(children: <Widget>[
+              Container(
+                /*
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: CarouselSlider(
+                        items: list
+                            .map((item) => Container(
+                                  child: Center(child: Text(item.toString())),
+                                  color: Colors.green,
+                                ))
+                            .toList(),
+                        carouselController: _controller,
+                        options: CarouselOptions(
+                            autoPlay: false,
+                            enlargeCenterPage: false,
+                            onPageChanged: (index, reason) {}),
                       ),
                     ),
-                  ),
-                  Center(
-                    child: Container(
-                      margin: EdgeInsets.only(top: 35),
-                      height: MediaQuery.of(context).size.height / 6,
-                      child: Chart(recentRegister: _sevenRegisters),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: list.asMap().entries.map((entry) {
+                        return GestureDetector(
+                          onTap: () => _controller.animateToPage(entry.key),
+                          child: Container(
+                            width: 12.0,
+                            height: 12.0,
+                            margin: EdgeInsets.symmetric(
+                                vertical: 8.0, horizontal: 4.0),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: (Theme.of(context).brightness ==
+                                            Brightness.dark
+                                        ? Colors.white
+                                        : Colors.black)
+                                    .withOpacity(
+                                        _current == entry.key ? 0.9 : 0.4)),
+                          ),
+                        );
+                      }).toList(),
                     ),
+                  ],
+                ),*/
+                height: MediaQuery.of(context).size.height / 3,
+                color: Vars.primary,
+                child: Column(
+                  children: [
+                    Align(
+                      alignment: Alignment(0, -1),
+                      child: Center(
+                        child: Vars.textMedium(
+                          context,
+                          text: 'CASA #2',
+                          isBold: true,
+                        ),
+                      ),
+                    ),
+                    Center(
+                      child: Container(
+                        margin: EdgeInsets.only(top: 35),
+                        height: MediaQuery.of(context).size.height / 6,
+                        child: Chart(recentRegister: _sevenRegisters),
+                      ),
+                    ),
+                    SizedBox(
+                      height:
+                          (MediaQuery.of(context).size.height / 18.83636) / 2,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(right: 3),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white70),
+                          height: MediaQuery.of(context).size.height / 100,
+                          width: MediaQuery.of(context).size.height / 100,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white),
+                          height: MediaQuery.of(context).size.height / 80,
+                          width: MediaQuery.of(context).size.height / 80,
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 3),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white70),
+                          height: MediaQuery.of(context).size.height / 100,
+                          width: MediaQuery.of(context).size.height / 100,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Column(
+                children: [
+                  SizedBox(
+                    height: (MediaQuery.of(context).size.height / 3) -
+                        (MediaQuery.of(context).size.height / 16.83636) / 2,
+                  ),
+                  Stack(children: <Widget>[
+                    Center(
+                      child: FormFields.sendTextFormField(
+                        context,
+                        TextEditingController(),
+                        icon: "Search",
+                        onChanged: (text) {},
+                        obscure: false,
+                        hint: "Buscar",
+                        buttonFunction: () {},
+                      ),
+                    ),
+                  ]),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.width / 30,
+                  ),
+                  Buttons.largeButton(
+                    context,
+                    function: () => _openregisterFormModal(context),
+                    texto: 'Novo Registro',
                   ),
                   SizedBox(
-                    height: (MediaQuery.of(context).size.height / 18.83636) / 2,
+                    height: MediaQuery.of(context).size.width / 30,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(right: 3),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.white70),
-                        height: MediaQuery.of(context).size.height / 100,
-                        width: MediaQuery.of(context).size.height / 100,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.white),
-                        height: MediaQuery.of(context).size.height / 80,
-                        width: MediaQuery.of(context).size.height / 80,
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 3),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.white70),
-                        height: MediaQuery.of(context).size.height / 100,
-                        width: MediaQuery.of(context).size.height / 100,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Column(
-              children: [
-                SizedBox(
-                  height: (MediaQuery.of(context).size.height / 3) -
-                      (MediaQuery.of(context).size.height / 16.83636) / 2,
-                ),
-                Stack(children: <Widget>[
-                  Center(
-                    child: FormFields.sendTextFormField(
-                      context,
-                      TextEditingController(),
-                      icon: "Search",
-                      onChanged: (text) {},
-                      obscure: false,
-                      hint: "Buscar",
-                      buttonFunction: () {},
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      '           Ultimos Registros',
+                      style: TextStyle(color: Colors.grey[700]),
                     ),
                   ),
-                ]),
-                SizedBox(
-                  height: MediaQuery.of(context).size.width / 30,
-                ),
-                Buttons.largeButton(
-                  context,
-                  function: () => _openregisterFormModal(context),
-                  texto: 'Novo Registro',
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.width / 30,
-                ),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    '           Ultimos Registros',
-                    style: TextStyle(color: Colors.grey[700]),
-                  ),
-                ),
-                Container(
-                    height: MediaQuery.of(context).size.height / 2.67,
-                    alignment: Alignment.topCenter,
-                    child: RegisterList(_registers, _removeRegister)),
-              ],
-            ),
-          ]),
+                  Container(
+                      height: MediaQuery.of(context).size.height / 2.62,
+                      alignment: Alignment.topCenter,
+                      child: RegisterList(_registers, _removeRegister)),
+                ],
+              ),
+            ]),
+          ),
         ),
         bottomNavigationBar: SafeArea(
           child: BottomNavigationBar(
