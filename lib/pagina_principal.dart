@@ -129,11 +129,22 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
       child: Scaffold(
         extendBodyBehindAppBar: false,
         appBar: PreferredSize(
-            preferredSize: Size.fromHeight(32.0), // here the desired height
+            preferredSize: Size.fromHeight(MediaQuery.of(context).size.height /
+                28), // here the desired height
             child: AppBar(
               elevation: 0,
               backgroundColor: Vars.primary,
-
+              leading: IconButton(
+                icon: Vars.icon(context, "Settings"),
+                onPressed: () {},
+              ),
+              flexibleSpace: Align(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  icon: Vars.icon(context, "Notifications"),
+                  onPressed: () {},
+                ),
+              ),
               // ...
             )),
         body: SingleChildScrollView(
