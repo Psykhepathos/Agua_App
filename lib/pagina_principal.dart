@@ -66,12 +66,36 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
       id: 'r1',
       leitura: 00000000,
       litros: 00,
-      date: DateTime.now().subtract(Duration(days: 2)),
+      date: DateTime.now().subtract(Duration(days: 6)),
     ),
     Register(
       id: 'r2',
       leitura: 00000010,
       litros: 10,
+      date: DateTime.now().subtract(Duration(days: 5)),
+    ),
+    Register(
+      id: 'r3',
+      leitura: 00000100,
+      litros: 90,
+      date: DateTime.now().subtract(Duration(days: 4)),
+    ),
+    Register(
+      id: 'r4',
+      leitura: 00000180,
+      litros: 80,
+      date: DateTime.now().subtract(Duration(days: 3)),
+    ),
+    Register(
+      id: 'r5',
+      leitura: 00000240,
+      litros: 60,
+      date: DateTime.now().subtract(Duration(days: 2)),
+    ),
+    Register(
+      id: 'r6',
+      leitura: 00000330,
+      litros: 70,
       date: DateTime.now().subtract(Duration(days: 1)),
     ),
   ];
@@ -98,6 +122,13 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
     );
     _setarRecenteRegistro();
     Navigator.of(context).pop();
+  }
+
+  _removeRegister(String id) {
+    setState(() {
+      _registers.removeWhere((rg) => rg.id == id);
+      _setarRecenteRegistro();
+    });
   }
 
   @override
@@ -198,7 +229,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                   Container(
                       height: 289,
                       alignment: Alignment.topCenter,
-                      child: RegisterList(_registers)),
+                      child: RegisterList(_registers, _removeRegister)),
                 ],
               ),
             ]),

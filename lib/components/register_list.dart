@@ -5,8 +5,8 @@ import 'package:intl/intl.dart';
 
 class RegisterList extends StatelessWidget {
   final List<Register> registers;
-
-  RegisterList(this.registers);
+final void Function(String) onRemove;
+  RegisterList(this.registers,this.onRemove);
 
   ScrollController _scrollController = ScrollController();
 
@@ -36,12 +36,10 @@ class RegisterList extends StatelessWidget {
                   context,
                   day: DateFormat('EEE', 'pt_BR').format(rg.date),
                   date: DateFormat('d/M/y').format(rg.date),
-                  reading1:
-                      rg.leitura.toString().padLeft(8, '0').substring(0, 4),
-                  reading2:
-                      rg.leitura.toString().padLeft(9, '0').substring(5, 9),
+                  reading1: rg.leitura.toString().padLeft(8, '0').substring(0, 4),
+                  reading2: rg.leitura.toString().padLeft(9, '0').substring(5, 9),
                   liters: rg.litros,
-                  function: () {},
+                  function: () => onRemove(rg.id),
                 ),
                 SizedBox(
                   height: 10,
