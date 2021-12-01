@@ -43,8 +43,8 @@ class _EsqueciSenhaState extends State<EsqueciSenha> {
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 5),
-                  width: 350,
-                  height: 350,
+                  width: 300,
+                  height: 300,
                   child: Image.asset('assets/images/tambasa.png'),
                 ),
                 Row(
@@ -53,7 +53,7 @@ class _EsqueciSenhaState extends State<EsqueciSenha> {
                       width: 8,
                     ),
                     Container(
-                      margin: EdgeInsets.only(right: 7, left: 13),
+                      margin: EdgeInsets.only(right: 7, left: 25),
                       height: 50,
                       width: 293,
                       child: TextField(
@@ -136,7 +136,7 @@ class _EsqueciSenhaState extends State<EsqueciSenha> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 10, bottom: 70),
+                  margin: EdgeInsets.only(top: 10, bottom: 30),
                   height: 50,
                   width: 350,
                   child: TextField(

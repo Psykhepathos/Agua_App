@@ -41,8 +41,8 @@ class _CadastroState extends State<Cadastro> {
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 5),
-                  width: 350,
-                  height: 350,
+                  width: 300,
+                  height: 300,
                   child: Image.asset('assets/images/tambasa.png'),
                 ),
                 FormFields.textFormField(
@@ -79,7 +79,7 @@ class _CadastroState extends State<Cadastro> {
                   onChanged: (text) {},
                 ),
                 SizedBox(
-                  height: 70,
+                  height: 60,
                 ),
                 Buttons.largeButton(
                   context,

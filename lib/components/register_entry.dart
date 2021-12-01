@@ -78,8 +78,10 @@ class RegisterEntry {
                     ),
                   ),
                 ),
-                Vars.textSmaller(context,
-                    text: "$liters Litros", color: Vars.activeText)
+                Container(
+                  child: Vars.textSmaller(context,
+                      text: "$liters Litros", color: Vars.activeText),
+                )
               ],
             )
           ],

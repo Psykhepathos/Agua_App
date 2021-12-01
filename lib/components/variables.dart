@@ -44,7 +44,7 @@ class Vars {
       text,
       style: TextStyle(
         fontFamily: isMono ? "Roboto Mono" : "Roboto",
-        fontSize: MediaQuery.of(context).size.height / 60,
+        fontSize: MediaQuery.of(context).size.height / 65,
         fontWeight: (isBold == true) ? FontWeight.bold : FontWeight.normal,
         color: color,
       ),
