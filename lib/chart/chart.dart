@@ -24,8 +24,7 @@ class Chart extends StatelessWidget {
         outsideLabelStyleAccessorFn: (_, __) {
           return charts.TextStyleSpec(color: charts.MaterialPalette.white);
         },
-        labelAccessorFn: (Register series, _) =>
-            '${series.leitura.toString()}L',
+        labelAccessorFn: (Register series, _) => '${series.litros.toString()}L',
       ),
     ];
 

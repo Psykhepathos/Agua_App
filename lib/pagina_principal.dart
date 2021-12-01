@@ -18,16 +18,6 @@ class PaginaPrincipal extends StatefulWidget {
   State<PaginaPrincipal> createState() => _PaginaPrincipalState();
 }
 
-class Movie {
-  Movie(
-      {required this.movieName,
-      required this.isAnimated,
-      required this.rating});
-  final String movieName;
-  final bool isAnimated;
-  final double rating;
-}
-
 class _PaginaPrincipalState extends State<PaginaPrincipal> {
   List<Register> _sevenRegisters = [];
   @override
