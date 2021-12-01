@@ -28,16 +28,14 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      SizedBox(
+                      Container(
+                        margin: EdgeInsets.only(bottom: 15),
                         width: 350,
                         height: 350,
                         child: Image.asset('assets/images/tambasa.png'),
                       ),
-                      const SizedBox(
-                        height: 5,
-                        width: 5,
-                      ),
                       Container(
+                        margin: EdgeInsets.only(bottom: 10),
                         height: 65,
                         width: 350,
                         child: TextField(
@@ -62,10 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                               filled: true),
                         ),
                       ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Container(
+                      SizedBox(
                         width: 350,
                         height: 60,
                         child: TextField(
