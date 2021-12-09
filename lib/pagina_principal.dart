@@ -129,8 +129,6 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
 
   @override
   Widget build(BuildContext context) {
-    _setarRecenteRegistro;
-    _sevenRegisters;
     return SafeArea(
       child: Scaffold(
         extendBodyBehindAppBar: false,
