@@ -24,8 +24,8 @@ class _RegisterFormState extends State<RegisterForm> {
     if (registro <= 0) {
       return;
     }
-
     widget.onSubmit(registro);
+    
   }
 
   @override

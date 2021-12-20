@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/chart/chart.dart';
@@ -7,6 +9,8 @@ import 'package:flutter_application_1/components/register_list.dart';
 import 'package:flutter_application_1/components/variables.dart';
 
 import 'package:flutter_application_1/models/registers.dart';
+import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 import 'dart:math';
 import '/models/registers.dart';
 import '/components/register_form.dart';
@@ -25,6 +29,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
   @override
   void initState() {
     super.initState;
+
     _sevenRegisters = _registers
         .where((i) =>
             i.date.day == DateTime.now().day ||
@@ -100,6 +105,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
   }
 
   _addRegister(int leitura) {
+    final _baseUrl = 'https://teste-fire-17c57-default-rtdb.firebaseio.com';
     var litros = leitura - _registers.elementAt(_registers.length - 1).leitura;
     final newRegister = Register(
         id: Random().nextDouble().toString(),
@@ -111,6 +117,18 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
       () {
         _registers.add(newRegister);
       },
+    );
+    http.post(
+      Uri.parse('$_baseUrl/totalList.json'),
+      body: jsonEncode(
+        {
+          'leitura': newRegister.leitura,
+          'litros': newRegister.litros,
+          'date': DateFormat('d/M/y').format(newRegister.date),
+          'weekDate':
+              capitalize(DateFormat('EEE', 'pt_BR').format(newRegister.date))
+        },
+      ),
     );
     _setarRecenteRegistro();
     Navigator.of(context).pop();
