@@ -3,6 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/buttons.dart';
 import 'package:flutter_application_1/components/form_fields.dart';
 import 'package:flutter_application_1/components/variables.dart';
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+import 'models/auth.dart';
 
 class Cadastro extends StatefulWidget {
   const Cadastro({Key? key}) : super(key: key);
@@ -12,6 +18,33 @@ class Cadastro extends StatefulWidget {
 }
 
 class _CadastroState extends State<Cadastro> {
+  final _passwordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  bool _isLoading = false;
+  Map<String, String> _authData = {
+    'email': '',
+    'password': '',
+  };
+  Future<void> _submit() async {
+    final isValid = _formKey.currentState?.validate() ?? false;
+
+    if (!isValid) {
+      return;
+    }
+
+    setState(() => _isLoading = true);
+
+    _formKey.currentState?.save();
+
+    // Registrar
+    await Auth().signup(
+      _authData['email']!,
+      _authData['password']!,
+    );
+
+    setState(() => _isLoading = false);
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,7 +61,7 @@ class _CadastroState extends State<Cadastro> {
                       Vars.primary,
                       Vars.primary,
                     ],
-                    function: () {
+                    onPressed: () {
                       setState(() {
                         Navigator.of(context)
                             .pushReplacementNamed('/login_page');
@@ -45,55 +78,70 @@ class _CadastroState extends State<Cadastro> {
                   height: 300,
                   child: Image.asset('assets/images/tambasa.png'),
                 ),
-                FormFields.textFormField(
-                  context,
-                  TextEditingController(),
-                  hint: "Nome",
-                  onChanged: (text) {},
+                SizedBox(
+                  height: 10,
                 ),
+                TextFormField(
+                style: TextStyle(color: Colors.black),
+                decoration: InputDecoration(labelText: 'E-mail'),
+                keyboardType: TextInputType.emailAddress,
+                onSaved: (email) => _authData['email'] = email ?? '',
+                validator: (_email) {
+                  final email = _email ?? '';
+                  if (email.trim().isEmpty || !email.contains('@')) {
+                    return 'Informe um e-mail válido.';
+                  }
+                  return null;
+                },
+              ),
                 SizedBox(
                   height: 10,
                 ),
                 FormFields.textFormField(
                   context,
-                  TextEditingController(),
-                  hint: "E-mail",
-                  onChanged: (text) {},
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                FormFields.textFormField(
-                  context,
-                  TextEditingController(),
+                  obscure: true,
                   hint: "Senha",
-                  onChanged: (text) {},
+                  onSubmited: (password) => _authData['password'] = password,
+                  validator: (_password) {
+                    final password = _password ?? '';
+                    if (password.isEmpty || password.length < 5) {
+                      return 'Informe uma senha valida.';
+                    }
+                    return null;
+                  },
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                FormFields.textFormField(
-                  context,
-                  TextEditingController(),
-                  hint: "Confirme a senha",
-                  onChanged: (text) {},
-                ),
+                TextFormField(
+                style: TextStyle(color: Colors.black),
+                decoration: InputDecoration(labelText: 'Senha'),
+                keyboardType: TextInputType.emailAddress,
+                obscureText: true,
+                controller: _passwordController,
+                onSaved: (password) => _authData['password'] = password ?? '',
+                validator: (_password) {
+                  final password = _password ?? '';
+                  if (password.isEmpty || password.length < 5) {
+                    return 'Informe uma senha válida';
+                  }
+                  return null;
+                },
+              ),
                 SizedBox(
                   height: 60,
                 ),
-                Buttons.largeButton(
-                  context,
-                  colors: Vars.secondaryGradient,
-                  texto: 'Enviar',
-                  function: () {
-                    setState(
-                      () {
-                        Navigator.of(context)
-                            .pushReplacementNamed('/login_page');
-                      },
-                    );
-                  },
-                )
+                if (_isLoading)
+                  CircularProgressIndicator()
+                else
+                  Buttons.largeButton(
+                    context,
+                    colors: Vars.secondaryGradient,
+                    texto: 'Enviar',
+                    onPressed: () {
+                      _submit();
+                    },
+                  )
               ],
             ),
           )),

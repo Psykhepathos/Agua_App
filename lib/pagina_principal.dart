@@ -297,7 +297,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                   ),
                   Buttons.largeButton(
                     context,
-                    function: () => _openregisterFormModal(context),
+                    onPressed: () => _openregisterFormModal(context),
                     texto: 'Novo Registro',
                   ),
                   SizedBox(

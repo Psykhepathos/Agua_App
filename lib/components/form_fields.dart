@@ -4,11 +4,13 @@ import 'package:flutter_application_1/components/variables.dart';
 
 class FormFields {
   static Widget textFormField(
-    context,
-    TextEditingController controller, {
+    context, {
+    TextEditingController? controller,
     TextInputType keyboardType = TextInputType.text,
     Function(String)? onChanged,
     Function(String)? onSubmited,
+    Function(String?)? onSaved,
+    String? Function(String?)? validator,
     TextInputAction textInputAction = TextInputAction.next,
     String hint = "Type here",
     double width = 0,
@@ -25,6 +27,8 @@ class FormFields {
         maxLength: (maxLenght == 0) ? null : maxLenght,
         controller: controller,
         onChanged: onChanged,
+        onSaved: onSaved,
+        validator: validator,
         onFieldSubmitted: onSubmited,
         keyboardType: keyboardType,
         textInputAction: textInputAction,
@@ -79,7 +83,7 @@ class FormFields {
       width: (width == 0) ? MediaQuery.of(context).size.width / 1.17582 : width,
       child: Stack(
         children: [
-          textFormField(context, controller,
+          textFormField(context,controller: controller,
               keyboardType: keyboardType,
               onChanged: onChanged,
               onSubmited: onSubmited,

@@ -30,7 +30,7 @@ class _EsqueciSenhaState extends State<EsqueciSenha> {
                       Vars.primary,
                       Vars.primary,
                     ],
-                    function: () {
+                    onPressed: () {
                       setState(() {
                         Navigator.of(context)
                             .pushReplacementNamed('/login_page');
@@ -164,7 +164,7 @@ class _EsqueciSenhaState extends State<EsqueciSenha> {
                   context,
                   colors: Vars.secondaryGradient,
                   texto: 'Atualizar',
-                  function: () {
+                  onPressed: () {
                     setState(
                       () {
                         Navigator.of(context)

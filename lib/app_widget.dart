@@ -4,6 +4,7 @@ import 'package:flutter_application_1/cadastro.dart';
 import 'package:flutter_application_1/esqueci_senha.dart';
 import 'package:flutter_application_1/login_page.dart';
 import 'package:flutter_application_1/pagina_principal.dart';
+import 'package:flutter_application_1/base_login.dart';
 import 'package:intl/date_symbol_data_local.dart';
 //
 
@@ -26,10 +27,9 @@ class AppWidget extends StatelessWidget {
         ),
         initialRoute: '/login_page',
         routes: {
-          '/login_page': (context) => const LoginPage(),
+          '/login_page': (context) => const AuthPage(),
           '/pagina_principal': (context) => const PaginaPrincipal(),
           '/esqueci_senha': (context) => const EsqueciSenha(),
-          '/cadastro': (context) => const Cadastro(),
         });
   }
 }

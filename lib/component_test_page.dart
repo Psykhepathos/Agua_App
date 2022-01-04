@@ -661,7 +661,7 @@ class Home extends StatelessWidget {
                   Center(
                     child: Buttons.largeButton(
                       context,
-                      function: null,
+                      onPressed: null,
                       texto: "Novo Registro",
                       textColor: Vars.offWhite,
                       colors: Vars.secondaryGradient,
@@ -680,7 +680,7 @@ class Home extends StatelessWidget {
                   children: [
                     FormFields.textFormField(
                       context,
-                      TextEditingController(),
+                     
                       onSubmited: (p0) => null,
                     ),
                     const SizedBox(
@@ -688,7 +688,7 @@ class Home extends StatelessWidget {
                     ),
                     FormFields.textFormField(
                       context,
-                      TextEditingController(),
+                    
                       onChanged: (p0) => null,
                       textColor: Vars.offWhite,
                       backgroundColor: Vars.disabledText,

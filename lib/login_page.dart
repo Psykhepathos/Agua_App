@@ -31,7 +31,6 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   FormFields.textFormField(
                     context,
-                    TextEditingController(),
                     hint: "E-mail",
                     onChanged: (text) {},
                   ),
@@ -61,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                         Vars.primary,
                         Vars.primary,
                       ],
-                      function: () {
+                      onPressed: () {
                         setState(() {
                           Navigator.of(context)
                               .pushReplacementNamed('/esqueci_senha');
@@ -76,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                     margin: EdgeInsets.only(top: 75),
                     child: Buttons.largeButton(context,
                         colors: Vars.secondaryGradient,
-                        texto: 'CADASTRAR', function: () {
+                        texto: 'CADASTRAR', onPressed: () {
                       setState(
                         () {
                           Navigator.of(context)
