@@ -5,6 +5,9 @@ import 'package:intl/intl.dart';
 
 class RegisterList extends StatelessWidget {
   final List<Register> registers;
+
+
+  
   final void Function(String) onRemove;
   RegisterList(this.registers, this.onRemove);
 

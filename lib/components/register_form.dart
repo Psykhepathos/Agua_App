@@ -24,7 +24,6 @@ class _RegisterFormState extends State<RegisterForm> {
     if (registro <= 0) {
       return;
     }
-
     widget.onSubmit(registro);
   }
 
@@ -51,7 +50,7 @@ class _RegisterFormState extends State<RegisterForm> {
           children: [
             FormFields.textFormField(
               context,
-              registroController,
+              controller: registroController,
               hint: "Registro",
               onSubmited: (_) => _submitForm(),
               keyboardType: TextInputType.number,
@@ -60,7 +59,7 @@ class _RegisterFormState extends State<RegisterForm> {
             Buttons.largeButton(
               context,
               texto: "Registrar",
-              function: _submitForm,
+              onPressed: _submitForm,
             ),
           ],
         ),

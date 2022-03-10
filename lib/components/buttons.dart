@@ -5,7 +5,7 @@ import 'variables.dart';
 class Buttons {
   static Widget largeButton(
     context, {
-    Function()? function,
+    Function()? onPressed,
     String texto = "Button",
     double width = 0,
     Color textColor = Colors.white,
@@ -36,7 +36,7 @@ class Buttons {
         ),
       ),
       child: ElevatedButton(
-        onPressed: function,
+        onPressed: onPressed,
         child: list[textSize],
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
